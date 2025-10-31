@@ -1,8 +1,8 @@
 package paw.models;
 
 public class Bird extends Pets{
-    public Bird(String name, String moodIndic, String accs, int moodLvl, int hungerLvl, int happinessLvl, int energyLvl) {
-        super(name, moodIndic, accs, moodLvl, hungerLvl, happinessLvl, energyLvl);
+    public Bird(String name, String moodIndic, String accs, int moodLvl, int hungerLvl, int happinessLvl, int energyLvl, int lvl, int exp) {
+        super(name, moodIndic, accs, moodLvl, hungerLvl, happinessLvl, energyLvl, lvl, exp);
     }
 
     @Override

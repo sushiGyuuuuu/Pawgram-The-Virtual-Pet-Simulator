@@ -2,70 +2,86 @@ package paw.models;
 
 public abstract class Pets {
     private String petName;
-    private String mood;
+    private String petSpecies;
     private String accessories;
     private int moodLevel;
-    private int hungerLevel;
-    private int happinessLevel;
     private int energy;
+    private int level;
+    private int experience;
 
     //Pet Constructor
-    public Pets(String petName, String mood, String accessories, int moodLevel, int hungerLevel, int happinessLevel, int energy) {
+    public Pets(String petName, String petSpecies, String accessories) {
         this.petName = petName;
-        this.mood = mood;
+        this.petSpecies = petSpecies;
         this.accessories = accessories;
         this.moodLevel = 100;
-        this.hungerLevel = 100;
-        this.happinessLevel = 100;
         this.energy = 100;
+        this.level = 1;
+        this.experience = 0;
     }
 
     //Getters and Setters
     public String getPetName() {return petName;}
-    public String getMoodIndicator() {return mood;}
+    public String getPetSpecies() {return petSpecies;}
     public String getAccessories() {return accessories;}
     public int getMoodLevel() {return moodLevel;}
-    public int getHungerLevel() {return hungerLevel;}
-    public int getHappinesLevel() {return happinessLevel;}
     public int getEnergy() {return energy;}
+    public int getLevel() {return level;}
+    public int getExperience() {return experience;}
 
     public void setPetName(String petName) {this.petName = petName;}
-    public void setMoodIndicator(String moodIndicator) {this.mood = moodIndicator;}
+    public void setPetSpecies(String petSpecies) {this.petSpecies = petSpecies;}
     public void setAccessories(String accessories) {this.accessories = accessories;}
     public void setMoodLevel(int moodLevel) {this.moodLevel = moodLevel;}
-    public void setHungerLevel(int hungerLevel) {this.hungerLevel = hungerLevel;}
-    public void setHappinessLevel(int happinessLevel) {this.happinessLevel = happinessLevel;}
     public void setEnergy(int energy) {this.energy = energy;}
+    public void setLevel(int level) {this.level = level;}
+    public void setExperience(int experience) {this.experience = experience;}
 
     //Abstract Methods 
     public abstract void makeSound();
     public abstract void move();
     public abstract void eatFood();
-    public abstract void expressMood();
     public abstract void reactToTouch();
     public abstract void getsSick();
+    public abstract void sleep();
+    public abstract void play();
 
-    //Common Behaviors
-    public void feed() {
-        moodLevel += 5;
-        hungerLevel += 10;
-        happinessLevel += 10;
-        energy += 10;
+    //Pet Stats Modifiers
+    public void petExperience(int amount) {
+        this.experience += amount;
 
-        System.out.println(petName + " has been fed!");
+        if(this.experience >= 100) {
+            this.level++;
+            this.experience -= 100;
+            System.out.println(getPetName() + " has now leveled up to lvl " + this.level + "!" );
+        }
     }
 
-    public void play() {
-        moodLevel += 10;
-        hungerLevel -= 5;
-        happinessLevel += 15;
-        energy -= 10;
+    public void petMood(int amount) {
+        this.moodLevel += amount;
 
-        System.out.println(petName + " has played!");
+        if(this.moodLevel > 100) this.moodLevel = 100;
+        if(this.moodLevel < 0) this.moodLevel = 0;
+
+        if(this.moodLevel >= 80 && this.moodLevel <= 100) {
+            System.out.println(getPetName() + " is very happy.");
+        }else if(this.moodLevel >= 20 && this.moodLevel <= 79) {
+            System.out.println(getPetName() + " is happy.");
+        }else{
+            System.out.println(getPetName() + " is sad.");
+        }
     }
 
-    public void sleep() {
-        hungerLevel -= 5;
-        energy += 20;
+    public void petEnergy(int amount) {
+        this.energy += amount;
+
+        if(this.energy > 100) this.energy = 100;
+        if(this.energy < 0) this.energy = 0;
+
+        if(this.energy < 20) {
+            System.out.println(getPetName() + " is low on energy.");
+            System.out.println("Feed your pet to increase its energy.");
+            this.moodLevel -= 10;
+        }
     }
 }
