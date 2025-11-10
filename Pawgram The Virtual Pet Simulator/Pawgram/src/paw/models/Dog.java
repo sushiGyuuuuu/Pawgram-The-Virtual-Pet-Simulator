@@ -1,6 +1,6 @@
 package paw.models;
 
-public class Dog extends Pets {
+public class Dog extends Mammal {
     public Dog(String name, String species, String accs) {
         super(name, species, accs);
     }
