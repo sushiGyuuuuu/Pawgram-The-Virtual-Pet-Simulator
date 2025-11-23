@@ -1,16 +1,17 @@
 package paw.models;
 
 public abstract class Pets {
-    private String petName;
-    private String petSpecies;
-    private String accessories;
-    private int moodLevel;
-    private int energy;
-    private int level;
-    private int experience;
+    protected String petName;
+    protected String petSpecies;
+    protected String accessories;
+    protected int moodLevel;
+    protected int energy;
+    protected int level;
+    protected int experience;
+    protected boolean isSick;
 
     //Pet Constructor
-    public Pets(String petName, String petSpecies, String accessories) {
+    public Pets(String petName, String petSpecies, String accessories, boolean isSick) {
         this.petName = petName;
         this.petSpecies = petSpecies;
         this.accessories = accessories;
@@ -18,6 +19,7 @@ public abstract class Pets {
         this.energy = 100;
         this.level = 1;
         this.experience = 0;
+        this.isSick = false;
     }
 
     //Getters and Setters
@@ -28,6 +30,7 @@ public abstract class Pets {
     public int getEnergy() {return energy;}
     public int getLevel() {return level;}
     public int getExperience() {return experience;}
+    public boolean getIsSick() {return isSick;}
 
     public void setPetName(String petName) {this.petName = petName;}
     public void setPetSpecies(String petSpecies) {this.petSpecies = petSpecies;}
@@ -36,6 +39,7 @@ public abstract class Pets {
     public void setEnergy(int energy) {this.energy = energy;}
     public void setLevel(int level) {this.level = level;}
     public void setExperience(int experience) {this.experience = experience;}
+    public void setIsSick(boolean isSick) {this.isSick = isSick;}
 
     //Abstract Methods 
     public abstract void makeSound();
@@ -84,4 +88,11 @@ public abstract class Pets {
             this.moodLevel -= 10;
         }
     }
+
+    public void checkHealth() {
+        if(this.energy < 10 || this.moodLevel < 10) {
+            isSick = true;
+            System.out.println(getPetName() + " became sick!");
+        }
+    } 
 }

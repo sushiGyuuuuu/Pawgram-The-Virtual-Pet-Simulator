@@ -1,8 +1,8 @@
 package paw.models;
 
 public class Dog extends Mammal {
-    public Dog(String name, String species, String accs) {
-        super(name, species, accs);
+    public Dog(String name, String accs, boolean sick) {
+        super(name, "Dog", accs, sick);
     }
 
     @Override
@@ -15,6 +15,7 @@ public class Dog extends Mammal {
             System.out.println(getPetName() + " is too tired to bark...");
             petMood(-5);
         }
+        checkHealth();
     }
     
     @Override
@@ -28,7 +29,7 @@ public class Dog extends Mammal {
             System.out.println(getPetName() + " is very tired. Feed it or let it rest.");
             petMood(-5);
         }
-        
+        checkHealth();
     }
 
     @Override
@@ -42,30 +43,21 @@ public class Dog extends Mammal {
             petExperience(10);
             petMood(10);
         }
-    }
-
-    @Override
-    public void reactToTouch() {
-        if(getMoodLevel() >= 30) {
-            System.out.println(getPetName() + " enjoys being petted!");
-            petExperience(10);
-            petMood(10);
-        }else {
-            System.out.println(getPetName() + " feels scared and backed away...");
-            petMood(-5);
-        }
+        checkHealth();
     }
 
     @Override 
     public void getsSick() {
-        if(getMoodLevel() <= 20 || getEnergy() <= 20) {
+        if(!isSick) {
             System.out.println(getPetName() + " looks very tired and refuses to move...");
+            setIsSick(true);
             petEnergy(-10);
             petMood(-15);
         }else {
             System.out.println(getPetName() + " seems a little better now, but still not feeling well...");
             petMood(-5);
         }
+        checkHealth();
     }
 
     @Override
@@ -79,6 +71,7 @@ public class Dog extends Mammal {
             System.out.println(getPetName() + " is already full of energy!");
             petMood(-3);
         }
+        checkHealth();
     }
 
     @Override
@@ -92,5 +85,6 @@ public class Dog extends Mammal {
             System.out.println(getPetName() + " feels too tired to play with you right now...");
             petMood(-5);
         }
+        checkHealth();
     }
 }

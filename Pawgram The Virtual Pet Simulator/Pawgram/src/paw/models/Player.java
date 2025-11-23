@@ -96,7 +96,7 @@ public class Player {
     public void useItem(int index, Pets pet) {
         if(index >= 0 && index < inventory.size()) {
             Item item = inventory.get(index);
-            item.use(pet);
+            item.useItem(pet);
             inventory.remove(index);
         }
     }
