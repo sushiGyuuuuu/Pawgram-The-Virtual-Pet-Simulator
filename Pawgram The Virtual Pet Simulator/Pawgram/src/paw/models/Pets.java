@@ -1,6 +1,8 @@
 package paw.models;
 
-public abstract class Pets {
+import java.io.Serializable;
+
+public abstract class Pets implements Serializable{
     protected String petName;
     protected String petSpecies;
     protected String accessories;
@@ -19,7 +21,7 @@ public abstract class Pets {
         this.energy = 100;
         this.level = 1;
         this.experience = 0;
-        this.isSick = false;
+        this.isSick = false; // healthy
     }
 
     //Getters and Setters

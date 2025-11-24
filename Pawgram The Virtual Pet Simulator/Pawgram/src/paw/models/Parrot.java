@@ -37,7 +37,7 @@ public class Parrot extends Bird{
             System.out.println(getPetName() + " is not in the mood for food right now.");
             petMood(-4);
         }else {
-            System.out.println(getPetName() + " eats the seeds and nuts!");
+            System.out.println(getPetName() + " ate the pellets!");
             petEnergy(8);
             petMood(5);
             petExperience(4);

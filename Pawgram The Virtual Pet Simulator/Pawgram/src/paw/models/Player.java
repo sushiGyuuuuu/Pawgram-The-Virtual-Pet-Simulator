@@ -1,9 +1,12 @@
 package paw.models;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Player {
+public class Player implements Serializable{
+    private static final long serialVersionUID = 1L;
+
     private String playerName;
     private int level;
     private int coins;
@@ -42,57 +45,11 @@ public class Player {
     public void setInventory(List<Item> inventory) {this.inventory = inventory;}
     public void setAccessories(List<Player> accessories) {this.accessories = accessories;}
     public void setActivePet(Pets activepet) {this.activePet = activepet;}
+    public void addItem(Item item) {inventory.add(item);}
+    public void addCoins(int amount) {this.coins += amount;}
+    public void addPet(Pets pet) {ownedPets.add(pet);}
     
     //Actions that can be made by the Player
-    public void buyPet(Pets pet, int price) {
-        if(coins > price) {
-            coins -= price;
-            ownedPets.add(pet);
-            System.out.printf("%s has bought a %s!%n", getPlayerName(), pet.getPetSpecies());
-            experience += 5;
-        }else {
-            System.out.printf("You don't have enough coins to buy a %s.%n", pet.getPetSpecies());
-        }
-    }
-
-    public void feedPets(Pets pet) {
-        pet.eatFood();
-        experience += 10;
-    }
-
-    public void playPets(Pets pet) {
-        pet.play();
-        experience += 15;
-    }
-
-    public void activePet(Pets pet) {
-        if(ownedPets.contains(pet)) {
-            this.activePet = pet;
-            System.out.println(pet.getPetName() + " is now active!");
-        }else {
-            System.out.println("You don't own this pet!");
-        }
-    }
-
-    public void buyAccessories(Item accessories, int price) {
-        if(coins >= price) {
-            coins -= price;
-            inventory.add(accessories);
-            System.out.printf("%s has bought a %s.%n", getPlayerName(), getAccessories());
-            experience += 5;
-        }else {
-            System.out.printf("You don't have enough coins to buy a %s.%n", getAccessories());
-        }
-    }
-
-    public void buyItems(Item item, int cost) {
-        if(coins >= cost) {
-            coins -= cost;
-            inventory.add(item);
-            System.out.println(getPlayerName() + " has successfully bought ");
-        }
-    }
-
     public void useItem(int index, Pets pet) {
         if(index >= 0 && index < inventory.size()) {
             Item item = inventory.get(index);
