@@ -1,19 +1,21 @@
 package paw.models;
 
+import paw.utils.PetUtils;
+
 public abstract class Bird extends Pets{
     public Bird(String name, String species, String accs, boolean sick) {
         super(name, species, accs, sick);
     }
 
     public void flapWings() {
-        System.out.println(getPetName() + " flaps its wings gracefully.");
+        System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " flaps its wings gracefully.");
         petMood(4);
         petEnergy(-3);
         checkHealth();
     }
 
     public void layEggs() {
-        System.out.println(getPetName() + " laid its eggs!");
+        System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " laid its eggs!");
         petExperience(10);
         checkHealth();
     }
@@ -21,10 +23,10 @@ public abstract class Bird extends Pets{
     @Override
     public void reactToTouch() {
         if(isSick) {
-            System.out.println(getPetName() + " is fragile and flutters away...");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " is fragile and flutters away...");
             petMood(-3);
         }else {
-            System.out.println(getPetName() + " chirps happily when gently touched.");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " chirps happily when gently touched.");
             petMood(8);
             petExperience(3);
         }
