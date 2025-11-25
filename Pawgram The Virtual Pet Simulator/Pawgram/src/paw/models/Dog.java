@@ -40,7 +40,7 @@ public class Dog extends Mammal {
             System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "does not want to eat right now.");
             petMood(-5);
         }else {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " is happily munching on dog food!");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "is happily munching on dog food!");
             petEnergy(10);
             petExperience(10);
             petMood(10);
@@ -51,12 +51,12 @@ public class Dog extends Mammal {
     @Override 
     public void getsSick() {
         if(!isSick) {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " looks very tired and refuses to move...");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "looks very tired and refuses to move...");
             setIsSick(true);
             petEnergy(-10);
             petMood(-15);
         }else {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " seems a little better now, but still not feeling well...");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "seems a little better now, but still not feeling well...");
             petMood(-5);
         }
         checkHealth();
@@ -65,12 +65,12 @@ public class Dog extends Mammal {
     @Override
     public void sleep() {
         if(getEnergy() < 100) {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " snores softly...");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "snores softly...");
             petEnergy(15);
             petExperience(5);
             petMood(2);
         }else {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " is already full of energy!");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "is already full of energy!");
             petMood(-3);
         }
         checkHealth();
@@ -79,12 +79,12 @@ public class Dog extends Mammal {
     @Override
     public void play() {
         if(getEnergy() > 25) {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " enjoys playing fetch with you!");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "enjoys playing fetch with you!");
             petEnergy(-8);
             petExperience(15);
             petMood(9);
         }else {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " feels too tired to play with you right now...");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "feels too tired to play with you right now...");
             petMood(-5);
         }
         checkHealth();

@@ -60,7 +60,7 @@ public abstract class Pets implements Serializable{
         if(this.experience >= 100) {
             this.level++;
             this.experience -= 100;
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " has now leveled up to lvl " + this.level + "!" );
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "has now leveled up to lvl " + this.level + "!" );
         }
     }
 
@@ -71,11 +71,11 @@ public abstract class Pets implements Serializable{
         if(this.moodLevel < 0) this.moodLevel = 0;
 
         if(this.moodLevel >= 80 && this.moodLevel <= 100) {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " is very happy.");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "is very happy.");
         }else if(this.moodLevel >= 20 && this.moodLevel <= 79) {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " is happy.");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "is happy.");
         }else{
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " is sad.");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "is sad.");
         }
     }
 
@@ -86,7 +86,7 @@ public abstract class Pets implements Serializable{
         if(this.energy < 0) this.energy = 0;
 
         if(this.energy < 20) {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " is low on energy.");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "is low on energy.");
             System.out.println("Feed your pet to increase its energy.");
             this.moodLevel -= 10;
         }
@@ -95,7 +95,7 @@ public abstract class Pets implements Serializable{
     public void checkHealth() {
         if(this.energy < 10 || this.moodLevel < 10) {
             isSick = true;
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " became sick!");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "became sick!");
         }
     } 
 }

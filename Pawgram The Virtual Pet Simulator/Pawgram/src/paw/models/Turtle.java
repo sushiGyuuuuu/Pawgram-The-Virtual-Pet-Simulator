@@ -42,7 +42,7 @@ public class Turtle extends Reptile {
             petEnergy(-10);
             petMood(-15);
         }else {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " looks a lot more better now!");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "looks a lot more better now!");
             petMood(-5);
         }
         checkHealth();
@@ -51,10 +51,10 @@ public class Turtle extends Reptile {
     @Override
     public void sleep() {
         if(getEnergy() < 100) {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " naps inside its shell.");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "naps inside its shell.");
             petEnergy(8);
         }else {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " isn't sleepy.");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "isn't sleepy.");
         }
         checkHealth();
     }
@@ -62,12 +62,12 @@ public class Turtle extends Reptile {
     @Override
     public void play() {
         if(getEnergy() >= 25) {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " plays with a floating toy!");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "plays with a floating toy!");
             petExperience(15);
             petMood(10);
             petEnergy(-8);
         }else {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " is too tired to play right now.");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "is too tired to play right now.");
         }
         checkHealth();
     }
