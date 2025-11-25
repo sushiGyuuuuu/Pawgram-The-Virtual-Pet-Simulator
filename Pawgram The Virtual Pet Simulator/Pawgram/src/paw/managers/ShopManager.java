@@ -21,13 +21,13 @@ public class ShopManager {
 
     public void openShop(paw.models.Player player) {
         PetUtils.clearScreen();
-        System.out.println("\n=== Pet Shop ===");
+        System.out.println("=== Pet Shop ===");
         System.out.println("Coins: " + player.getCoins());
         for(int i = 0; i < items.size(); i++) {
             System.out.println(i + 1 + ". " + items.get(i).getItemName() + " - " + items.get(i).getItemCost() + " coins");
         }
         System.out.println("0. Exit");
-        System.out.println("Select: ");
+        System.out.print("Select: ");
         int choice = input.nextInt();
         input.nextLine();
         if(choice == 0) return;

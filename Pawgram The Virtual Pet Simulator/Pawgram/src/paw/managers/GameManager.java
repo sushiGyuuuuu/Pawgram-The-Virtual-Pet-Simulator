@@ -80,8 +80,9 @@ public class GameManager {
 
     private void mainLoop() {
         int choice;
+        String response;
         do {
-            System.out.println("\n=== Menu ===");
+            System.out.println("=== Menu ===");
             System.out.println("1. Feed Pet");
             System.out.println("2. Play");
             System.out.println("3. Sleep");
@@ -96,36 +97,107 @@ public class GameManager {
             choice = input.nextInt();
             input.nextLine();
             PetUtils.clearScreen();
+
             switch (choice) {
                 case 1: 
                     player.getActivePet().eatFood();
+                    PetUtils.pause();
+                    PetUtils.clearScreen();
+                    System.out.print("Press Enter to continue.");
+                    response = input.nextLine();
+                    if(response == " ") {
+                        break;
+                    }
+                    PetUtils.clearScreen();
                     break;
                 case 2:
-                     player.getActivePet().play();
+                    player.getActivePet().play();
+                    PetUtils.pause();
+                    PetUtils.clearScreen();
+                    System.out.print("Press Enter to continue.");
+                    response = input.nextLine();
+                    if(response == " ") {
+                        break;
+                    }
+                    PetUtils.clearScreen();
                      break;
                 case 3:
-                     player.getActivePet().sleep();
+                    player.getActivePet().sleep();
+                    PetUtils.pause();
+                    PetUtils.clearScreen();
+                    System.out.print("Press Enter to continue.");
+                    response = input.nextLine();
+                    if(response == " ") {
+                        break;
+                    }
+                    PetUtils.clearScreen();
                      break;
                 case 4:
-                     showStats();
-                     break;
+                    showStats();
+                    System.out.print("\nPress Enter to continue.");
+                    response = input.nextLine();
+                    if(response == " ") {
+                        break;
+                    }
+                    PetUtils.clearScreen();
+                    break;
                 case 5:
-                     petManager.switchPet(player);
-                     break;
+                    petManager.switchPet(player);
+                    PetUtils.pause();
+                    PetUtils.clearScreen();
+                    System.out.print("Press Enter to continue.");
+                    response = input.nextLine();
+                    if(response == " ") {
+                        break;
+                    }
+                    PetUtils.clearScreen();
+                    break;
                 case 6:
-                     shop.openShop(player);
-                     break;
+                    shop.openShop(player);
+                    PetUtils.pause();
+                    PetUtils.clearScreen();
+                    System.out.print("Press Enter to continue.");
+                    response = input.nextLine();
+                    if(response == " ") {
+                        break;
+                    }
+                    PetUtils.clearScreen();
+                    break;
                 case 7:
-                     openInventory();
-                     break;
+                    openInventory();
+                    PetUtils.pause();
+                    PetUtils.clearScreen();
+                    System.out.print("Press Enter to continue.");
+                    response = input.nextLine();
+                    if(response == " ") {
+                        break;
+                    }
+                    PetUtils.clearScreen();
+                    break;
                 case 8:
-                     SaveSystem.save(player);
-                     break;
+                    SaveSystem.save(player);
+                    PetUtils.pause();
+                    PetUtils.clearScreen();
+                    System.out.print("Press Enter to continue.");
+                    response = input.nextLine();
+                    if(response == " ") {
+                        break;
+                    }
+                    PetUtils.clearScreen();
+                    break;
                 case 9:
                     Player loaded = SaveSystem.load();
                     if (loaded != null){
                         player = loaded;
                     }
+                    PetUtils.pause();
+                    PetUtils.clearScreen();
+                    System.out.print("Press Enter to continue.");
+                    response = input.nextLine();
+                    if(response == " ") {
+                        break;
+                    }
+                    PetUtils.clearScreen();
                     break;
                 case 0:
                     System.out.println("Goodbye!");
@@ -137,7 +209,7 @@ public class GameManager {
     }
     private void showStats() {
         Pets pet = player.getActivePet();
-        System.out.println("\n-- " + pet.getPetName() + " --");
+        System.out.println("-- " + PetUtils.capitalizeFirstLetter(pet.getPetName()) + " --");
         System.out.println("Species: " + pet.getPetSpecies());
         System.out.println("Mood: " + pet.getMoodLevel());
         System.out.println("Energy: " + pet.getEnergy());
@@ -151,7 +223,7 @@ public class GameManager {
             System.out.println("Inventory empty.");
             return;
         }
-        System.out.println("\nInventory:");
+        System.out.println("Inventory:");
         for (int i = 0; i < player.getInventory().size(); i++) {
             System.out.println((i+1) + ". " + player.getInventory().get(i).getItemName());
         }
