@@ -7,11 +7,10 @@ import java.util.Scanner;
 public class PetManager {
     private Scanner input = new Scanner(System.in);
 
-    public Pets namePet(int choice) {
-    System.out.print("Name your pet: ");
-        String name = input.nextLine();
+    public Pets createPet(int choice, String name) {
+        System.out.print("Name your pet: ");
+        name = input.nextLine();
         PetUtils.capitalizeFirstLetter(name);
-
 
         return switch (choice) {
             case 1 -> new Dog(PetUtils.capitalizeFirstLetter(name),"Collar", false); 

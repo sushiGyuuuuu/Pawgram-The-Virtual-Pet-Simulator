@@ -11,6 +11,7 @@ public abstract class Pets implements Serializable{
     protected int energy;
     protected int level;
     protected int experience;
+    protected int happiness;
     protected boolean isSick;
 
     //Pet Constructor
@@ -22,6 +23,7 @@ public abstract class Pets implements Serializable{
         this.energy = 100;
         this.level = 1;
         this.experience = 0;
+        this.happiness = 100;
         this.isSick = false; // healthy
     }
 
@@ -33,6 +35,7 @@ public abstract class Pets implements Serializable{
     public int getEnergy() {return energy;}
     public int getLevel() {return level;}
     public int getExperience() {return experience;}
+    public int getHappiness() {return happiness;}
     public boolean getIsSick() {return isSick;}
 
     public void setPetName(String petName) {this.petName = petName;}
@@ -42,6 +45,7 @@ public abstract class Pets implements Serializable{
     public void setEnergy(int energy) {this.energy = energy;}
     public void setLevel(int level) {this.level = level;}
     public void setExperience(int experience) {this.experience = experience;}
+    public void setHappiness(int happiness) {this.happiness = happiness;}
     public void setIsSick(boolean isSick) {this.isSick = isSick;}
 
     //Abstract Methods 
@@ -97,5 +101,10 @@ public abstract class Pets implements Serializable{
             isSick = true;
             System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "became sick!");
         }
-    } 
+    }
+
+    public void increaseHappiness(int amount) {
+    this.happiness = Math.min(100, this.happiness + amount);
+}
+
 }

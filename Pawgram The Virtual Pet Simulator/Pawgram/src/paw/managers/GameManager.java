@@ -69,7 +69,7 @@ public class GameManager {
         input.nextLine();
         PetUtils.clearScreen();
 
-        Pets p = petManager.namePet(choice);
+        Pets p = petManager.createPet(choice, name);
 
         if (p != null) {
             player.addPet(p);
