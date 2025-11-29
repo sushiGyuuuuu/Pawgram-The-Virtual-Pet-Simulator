@@ -1,42 +1,41 @@
 package paw.utils;
 
-import java.util.concurrent.TimeUnit;
-
 public class PetUtils {
+    
+    public static String capitalizeFirstLetter(String str) {
+        if (str == null || str.isEmpty()) {
+            return str;
+        }
+        return str.substring(0, 1).toUpperCase() + str.substring(1);
+    }
+
     public static void clearScreen() {
-        try {
-            if (System.getProperty("os.name").contains("Windows")) {
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            } else {
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
-            }
-        } catch (Exception e) {
-            for (int i = 0; i < 50; i++) {
-                System.out.println();
-            }
-        }
+        UIUtils.clearScreen();
     }
+
     public static void pause() {
-        try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+        UIUtils.pause();
     }
 
-    public static String capitalizeFirstLetter(String text) {
-        if (text == null || text.isEmpty()) {
-            return text;
-        }
-
-        String[] words = text.trim().split("\\s+");
+    // New method to display pet status in a formatted way
+    public static String formatPetStatus(String name, String species, int mood, int energy, int level, boolean isSick, String gender, boolean isPregnant) {
         StringBuilder sb = new StringBuilder();
-        for (String word : words) {
-            sb.append(Character.toUpperCase(word.charAt(0)))
-              .append(word.substring(1).toLowerCase())
-              .append(" ");
+        
+        sb.append(UIUtils.createTitleBox(name + " the " + species));
+        sb.append(UIUtils.getPetAsciiArt(species)).append("\n");
+        
+        sb.append("Status:\n");
+        sb.append("  ").append(" Gender: ").append(gender);
+        if (isPregnant) {
+            sb.append(" ").append((true));
         }
+        sb.append("\n");
+        
+        sb.append("  ").append(" Mood: ").append(UIUtils.createProgressBar(mood, 100, 10)).append("\n");
+        sb.append("  ").append(" Energy: ").append(UIUtils.createProgressBar(energy, 100, 10)).append("\n");
+        sb.append("  ").append( " Level: ").append(level).append("\n");
+        sb.append("  ").append(" Health: ").append(isSick ? "Sick" : "Healthy").append("\n");
+        
         return sb.toString();
     }
 }

@@ -3,8 +3,8 @@ package paw.models;
 import paw.utils.PetUtils;
 
 public class Turtle extends Reptile {
-    public Turtle(String name, String accessories, boolean sick) {
-        super(name, "Turtle", accessories, sick);
+    public Turtle(String name, String accs, String gender, boolean sick) {
+        super(name, "Turtle", accs, gender, "Reptile", "Calm", "Vegetables", "Terrarium", sick);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class Turtle extends Reptile {
 
     @Override
     public void getsSick() {
-        if(!isSick) {
+        if(isSick) {
             System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " looks sick and unable to move.");
             setIsSick(true);
             petEnergy(-10);

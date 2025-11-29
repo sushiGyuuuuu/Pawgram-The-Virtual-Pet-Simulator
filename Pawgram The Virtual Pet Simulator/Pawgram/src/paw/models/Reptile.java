@@ -3,26 +3,27 @@ package paw.models;
 import paw.utils.PetUtils;
 
 public abstract class Reptile extends Pets{
-    public Reptile(String name, String species, String accessories, boolean sick) {
-        super(name, species, accessories, sick);
+    public Reptile(String name, String species, String accs, String gender, String breedGroup, String nature, String favFood, String prefEnv, 
+        boolean sick) {
+        super(name, species, accs, gender, breedGroup, nature, favFood, prefEnv, sick);
     }
     public void shedSkin() {
-        System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "is starting to shed its skin!");
+        System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " is starting to shed its skin!");
         checkHealth();
     }
     public void layEggs() {
-        System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "laid its eggs!");
+        System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " laid its eggs!");
         petExperience(10);
         checkHealth();
     }
 
     public void makeSound() {
         if(getEnergy() > 20) {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "makes a soft hissing noise.");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " makes a soft hissing noise.");
             petExperience(2);
             petMood(5);
         }else {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "is too tired...");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " is too tired...");
             petMood(-3);
         }
         checkHealth();
@@ -31,10 +32,10 @@ public abstract class Reptile extends Pets{
     @Override
     public void reactToTouch() {
         if(getMoodLevel() <= 20) {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "is scared. It doesn't want to be touched.");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " is scared. It doesn't want to be touched.");
             petMood(-10);
         }else {
-            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + "loves being touched!");
+            System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " loves being touched!");
             petMood(10);
             petExperience(10);
         }
