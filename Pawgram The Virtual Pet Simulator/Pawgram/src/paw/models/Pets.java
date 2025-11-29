@@ -10,7 +10,7 @@ public abstract class Pets implements Serializable {
     protected String accessories;
     protected String gender;
     protected String breedGroup;
-    protected String nature; // CHANGED: from "nature" to "temperament" for consistency
+    protected String nature; 
     protected String favoriteFood;
     protected String preferredEnvironment;
 
@@ -30,7 +30,7 @@ public abstract class Pets implements Serializable {
     // Constructor
     public Pets(
         String petName, String petSpecies, String accessories,
-        String gender, String breedGroup, String nature, // CHANGED: parameter name
+        String gender, String breedGroup, String nature,
         String favoriteFood, String preferredEnvironment,
         boolean isSick
     ) {
@@ -39,7 +39,7 @@ public abstract class Pets implements Serializable {
         this.accessories = accessories;
         this.gender = gender;
         this.breedGroup = breedGroup;
-        this.nature = nature; // CHANGED: from "nature" to "temperament"
+        this.nature = nature; 
         this.favoriteFood = favoriteFood;
         this.preferredEnvironment = preferredEnvironment;
 
@@ -65,7 +65,7 @@ public abstract class Pets implements Serializable {
     public String getAccessories() { return accessories; }
     public String getGender() { return gender; }
     public String getBreedGroup() { return breedGroup; }
-    public String getNature() { return nature; } // CHANGED: from getNature()
+    public String getNature() { return nature; }
     public String getFavoriteFood() { return favoriteFood; }
     public String getPreferredEnvironment() { return preferredEnvironment; }
 
@@ -82,11 +82,11 @@ public abstract class Pets implements Serializable {
     public boolean getIsPregnant() { return isPregnant; }
     public boolean getCanBreed() { return canBreed; }
 
-    public void setPetName(String name) { petName = name; } // ADDED: missing setter
-    public void setAccessories(String accs) { accessories = accs; } // ADDED: missing setter
-    public void setNature(String nature) { this.nature = nature; } // ADDED: missing setter
-    public void setFavoriteFood(String food) { favoriteFood = food; } // ADDED: missing setter
-    public void setPreferredEnvironment(String env) { preferredEnvironment = env; } // ADDED: missing setter
+    public void setPetName(String name) { petName = name; }
+    public void setAccessories(String accs) { accessories = accs; } 
+    public void setNature(String nature) { this.nature = nature; } 
+    public void setFavoriteFood(String food) { favoriteFood = food; } 
+    public void setPreferredEnvironment(String env) { preferredEnvironment = env; } 
     
     public void setMoodLevel(int value) { moodLevel = value; }
     public void setEnergy(int value) { energy = value; }
