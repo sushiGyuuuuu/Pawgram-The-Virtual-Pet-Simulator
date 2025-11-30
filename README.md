@@ -7,7 +7,7 @@
 
 ---
 
-<h3> 🏠Step into Pawgram, where every pet finds a loving home🐕</h3>
+<h3> Step into Pawgram, where every pet finds a loving home🐕</h3>
 </div>
 
 ---
@@ -28,7 +28,7 @@
 
 ---
 
-<h3> 💌Object-oriented Principles 𓆝 𓆟 𓆞 𓆝</h3>
+<h3>Object-oriented Principles 𓆝 𓆟 𓆞 𓆝</h3>
 <p> 
 <strong>🐔ENCAPSULATION</strong>- means bundling data (variables) and methods that operate on that data inside a class, while restricting accessibility if not included in the same package using access modifiers like protected. It protects the data and allows controlled access from outside packages through the use of getters and setters. 
   <br>
@@ -171,7 +171,7 @@ We are thankful for the effort, teamwork, and dedication we poured into developi
 
 We extend our appreciation to our instructor, <strong>Ma'am Fatima Agdon</strong>, for her guidance and for teaching us the concepts that made this project possible.
 
-Lastly, we thank <strong>Biskit, Chocolate, and Dixie</strong>, our beloved pets, for inspiring us and reminding us how meaningful real-lide pet care and companion can be.🎀💝
+Lastly, we thank <strong>Biskit, Chocolate, and Dixie</strong>, our beloved pets, for inspiring us and reminding us how meaningful real-lide pet care and companion can be.🎀
 </p> 
 </div>
 
@@ -179,8 +179,8 @@ Lastly, we thank <strong>Biskit, Chocolate, and Dixie</strong>, our beloved pets
 
 <h3> 🔍References </h3>
 <p>
-✔️Ma'am Fatima Agdon - for guidance and supervision.
-✔️Object-Oriented Programming course - notes and examples.
+✔️Ma'am Fatima Agdon - for guidance and supervision.<br>
+✔️Object-Oriented Programming course - notes and examples.<br>
 ✔️GitHub Repositories - for inspiration on pet simulator project and OOP implementations.
 </p>
 
