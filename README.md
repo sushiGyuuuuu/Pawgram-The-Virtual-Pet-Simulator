@@ -103,7 +103,7 @@ Pawgram
   <tr>
     <td><img src="IMAGE HERE" width="100" height="100"></td>
     <td>
-      <strong>Perez, Gabriel Theodore</strong><br/>
+      <strong>Orquinaza, Marylein</strong><br/>
       <a href="GITHUB PROFILE LINK HERE" target="_blank">
         <img src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white">
       </a>
@@ -114,7 +114,7 @@ Pawgram
   <tr>
     <td><img src="IMAGE HERE" width="100" height="100"></td>
     <td>
-      <strong>Orquinaza, Marylein</strong><br/>
+      <strong>Perez, Gabriel Theodore</strong><br/>
       <a href="GITHUB PROFILE LINK HERE" target="_blank">
         <img src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white">
       </a>
