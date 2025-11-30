@@ -7,7 +7,7 @@
 
 ---
 
-<h3> 🏠Step into Pawgram, where every pet finds a loving home.🐕</h3>
+<h3> 🏠Step into Pawgram, where every pet finds a loving home🐕</h3>
 </div>
 
 ---
@@ -30,27 +30,27 @@
 
 <h3> 💌Object-oriented Principles 𓆝 𓆟 𓆞 𓆝</h3>
 <p> 
-🐔ENCAPSULATION- means bundling data (variables) and methods that operate on that data inside a class, while restricting accessibility if not included in the same package using access modifiers like protected. It protects the data and allows controlled access from outside packages through the use of getters and setters. 
+<strong>🐔ENCAPSULATION</strong>- means bundling data (variables) and methods that operate on that data inside a class, while restricting accessibility if not included in the same package using access modifiers like protected. It protects the data and allows controlled access from outside packages through the use of getters and setters. 
   <br>
   
-🐺INHERITANCE- lets one class inherit fields and methods from another class. It promotes code reuse and creates a parent–child relationship (e.g., Dog extends Mammal or Mammal extends Pets). The Pets class encapsulates all the shared attributes and behaviors that every virtual pet must possess—such as name, species, mood levels, energy, and core interactions—while declaring abstract methods like makeSound(), move(), and eatFood() that force subclasses to provide their specific implementations. 
+<strong>🐺INHERITANCE</strong>- lets one class inherit fields and methods from another class. It promotes code reuse and creates a parent–child relationship (e.g., Dog extends Mammal or Mammal extends Pets). The Pets class encapsulates all the shared attributes and behaviors that every virtual pet must possess—such as name, species, mood levels, energy, and core interactions—while declaring abstract methods like makeSound(), move(), and eatFood() that force subclasses to provide their specific implementations. 
   <br>
   
-🐰POLYMORPHISM- allows one action to behave differently depending on the object performing it. This includes the use abstract methods, allowing different pet subclasses (like dogs, cats, or birds) to provide their own unique implementations of common behaviors—so while all pets can make sounds, a dog might bark while a cat meows, and the system can treat them uniformly as Pets objects while still executing their specific behaviors at runtime.  
+<strong>🐰POLYMORPHISM</strong>- allows one action to behave differently depending on the object performing it. This includes the use abstract methods, allowing different pet subclasses (like dogs, cats, or birds) to provide their own unique implementations of common behaviors—so while all pets can make sounds, a dog might bark while a cat meows, and the system can treat them uniformly as Pets objects while still executing their specific behaviors at runtime.  
   <br>
-🐷ABSTRACTION- focuses on showing only essential features while hiding unnecessary details. This is done using abstract classes and interfaces to define behavior without showing full implementation. The Pets class is declared as an abstract class, meaning it cannot be instantiated directly but instead provides a conceptual blueprint for what constitutes a virtual pet without specifying how each behavior is actually implemented. Through its abstract methods like makeSound(), move(), and eatFood(), it defines the contract of what every pet must be able to do while completely concealing the specific mechanics of how different pets will accomplish these actions.
+<strong>🐷ABSTRACTION</strong>- focuses on showing only essential features while hiding unnecessary details. This is done using abstract classes and interfaces to define behavior without showing full implementation. The Pets class is declared as an abstract class, meaning it cannot be instantiated directly but instead provides a conceptual blueprint for what constitutes a virtual pet without specifying how each behavior is actually implemented. Through its abstract methods like makeSound(), move(), and eatFood(), it defines the contract of what every pet must be able to do while completely concealing the specific mechanics of how different pets will accomplish these actions.
   <br>
 </p>
 </div>
 
 ---
-<div align="center">
- ∧,,,∧ <br>
-(  ̳• · • ̳) <br>
-/    づ♡   Welcome Pawkeepers! ⏾⋆.˚ ✦︎ ⛧٠࣪⭑<br> 
+       /\_/\ 
+      ( •ᴥ• ) 🐾  — Welcome, Pawkeepers!
+       > 🍪      Your tiny friend awaits you!
 
 ---
 
+<div align="center">
 <h3> ── .✦ Project Structure ✦. ── </h3>
 </div>
 
@@ -106,7 +106,7 @@ Pawgram
     <td><img src="IMAGE HERE" width="100" height="100"></td>
     <td>
       <strong>Orquinaza, Marylein</strong><br/>
-      <a href="GITHUB PROFILE LINK HERE" target="_blank">
+      <a href="https://github.com/yamahoera" target="_blank">
         <img src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white">
       </a>
     </td>
@@ -117,7 +117,7 @@ Pawgram
     <td><img src="IMAGE HERE" width="100" height="100"></td>
     <td>
       <strong>Perez, Gabriel Theodore</strong><br/>
-      <a href="GITHUB PROFILE LINK HERE" target="_blank">
+      <a href="github.com/sushiGyuuuuu" target="_blank">
         <img src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white">
       </a>
     </td>
@@ -128,7 +128,7 @@ Pawgram
     <td><img src="IMAGE HERE" width="100" height="100"></td>
     <td>
       <strong>Velasco, Iah Shanelle</strong><br/>
-      <a href="GITHUB PROFILE LINK HERE" target="_blank">
+      <a href="github.com/macherieshanelle" target="_blank">
         <img src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white">
       </a>
     </td>
