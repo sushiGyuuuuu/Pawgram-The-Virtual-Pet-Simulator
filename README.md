@@ -3,7 +3,7 @@
 <h1> ✨Pawgram: A Comfort Companion </h1>
 
 <h2> Built with Java, wrapped in warmth and creativity ♡ </h2>
-<h4> BY: CS-2103</h4>
+<h4> <i>BY: CS-2103</i></h4>
 
 ---
 
@@ -30,15 +30,15 @@
 
 <h3>Object-oriented Principles 𓆝 𓆟 𓆞 𓆝</h3>
 <p> 
-<strong>🐔ENCAPSULATION</strong>- means bundling data (variables) and methods that operate on that data inside a class, while restricting accessibility if not included in the same package using access modifiers like protected. It protects the data and allows controlled access from outside packages through the use of getters and setters. 
+<strong>ENCAPSULATION</strong>- means bundling data (variables) and methods that operate on that data inside a class, while restricting accessibility if not included in the same package using access modifiers like protected. It protects the data and allows controlled access from outside packages through the use of getters and setters. 
   <br>
   
-<strong>🐺INHERITANCE</strong>- lets one class inherit fields and methods from another class. It promotes code reuse and creates a parent–child relationship (e.g., Dog extends Mammal or Mammal extends Pets). The Pets class encapsulates all the shared attributes and behaviors that every virtual pet must possess—such as name, species, mood levels, energy, and core interactions—while declaring abstract methods like makeSound(), move(), and eatFood() that force subclasses to provide their specific implementations. 
+<strong>INHERITANCE</strong>- lets one class inherit fields and methods from another class. It promotes code reuse and creates a parent–child relationship (e.g., Dog extends Mammal or Mammal extends Pets). The Pets class encapsulates all the shared attributes and behaviors that every virtual pet must possess—such as name, species, mood levels, energy, and core interactions—while declaring abstract methods like makeSound(), move(), and eatFood() that force subclasses to provide their specific implementations. 
   <br>
   
-<strong>🐰POLYMORPHISM</strong>- allows one action to behave differently depending on the object performing it. This includes the use abstract methods, allowing different pet subclasses (like dogs, cats, or birds) to provide their own unique implementations of common behaviors—so while all pets can make sounds, a dog might bark while a cat meows, and the system can treat them uniformly as Pets objects while still executing their specific behaviors at runtime.  
+<strong>POLYMORPHISM</strong>- allows one action to behave differently depending on the object performing it. This includes the use abstract methods, allowing different pet subclasses (like dogs, cats, or birds) to provide their own unique implementations of common behaviors—so while all pets can make sounds, a dog might bark while a cat meows, and the system can treat them uniformly as Pets objects while still executing their specific behaviors at runtime.  
   <br>
-<strong>🐷ABSTRACTION</strong>- focuses on showing only essential features while hiding unnecessary details. This is done using abstract classes and interfaces to define behavior without showing full implementation. The Pets class is declared as an abstract class, meaning it cannot be instantiated directly but instead provides a conceptual blueprint for what constitutes a virtual pet without specifying how each behavior is actually implemented. Through its abstract methods like makeSound(), move(), and eatFood(), it defines the contract of what every pet must be able to do while completely concealing the specific mechanics of how different pets will accomplish these actions.
+<strong>ABSTRACTION</strong>- focuses on showing only essential features while hiding unnecessary details. This is done using abstract classes and interfaces to define behavior without showing full implementation. The Pets class is declared as an abstract class, meaning it cannot be instantiated directly but instead provides a conceptual blueprint for what constitutes a virtual pet without specifying how each behavior is actually implemented. Through its abstract methods like makeSound(), move(), and eatFood(), it defines the contract of what every pet must be able to do while completely concealing the specific mechanics of how different pets will accomplish these actions.
   <br>
 </p>
 </div>
@@ -166,12 +166,12 @@ java Main.java
 
 <h3> 𓇼 ⋆.˚ 𓆉 𓆝 𓆡⋆.˚ 𓇼 ACKNOWLEDGMENT 𓇼 ⋆.˚ 𓆉 𓆝 𓆡⋆.˚ 𓇼 </h3>
 <p> 
-  The <strong>Pawkeepers</strong> would like to express their deepest gratitude for the successful completion of this final project.
+  The <strong><i>Pawkeepers</i></strong> would like to express their deepest gratitude for the successful completion of this final project.
 We are thankful for the effort, teamwork, and dedication we poured into developing Pawgram.
 
-We extend our appreciation to our instructor, <strong>Ma'am Fatima Agdon</strong>, for her guidance and for teaching us the concepts that made this project possible.
+We extend our appreciation to our instructor, <strong><i>Ma'am Fatima Agdon</i></strong>, for her guidance and for teaching us the concepts that made this project possible.
 
-Lastly, we thank <strong>Biskit, Chocolate, and Dixie</strong>, our beloved pets, for inspiring us and reminding us how meaningful real-lide pet care and companion can be.🎀
+Lastly, we thank <strong><i>Biskit, Chocolate, and Dixie</strong></i>, our beloved pets, for inspiring us and reminding us how meaningful real-lide pet care and companion can be.🎀
 </p> 
 </div>
 
