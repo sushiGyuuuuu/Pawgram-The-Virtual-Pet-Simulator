@@ -92,6 +92,30 @@ Pawgram
 
 ---
 
+<div align = "center">
+<h3>  How to Run the Program  <br>
+    ◁ |⚙⌨⚙| ▷ </h3>
+</div>
+  
+<p> 
+Open your terminal in the src/ folder and run:
+</p>
+
+```
+javac Main.java
+```
+
+<p>
+  Run the program using:
+</p>
+
+```
+java Main.java
+```
+
+
+---
+
 <div align="center">
   
 <h2> ≽^• ˕ • ྀི≼ Contributors ≽^• ˕ • ྀི≼</h2>
