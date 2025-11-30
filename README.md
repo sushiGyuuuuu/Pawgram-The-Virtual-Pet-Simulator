@@ -16,6 +16,17 @@
 <p> Pawgram is a Java-based program designed to combat digital loneliness and provide a moment of calm by offering a simple, charming virtual pet. Its main features include interactive care routines like feeding and playing, alongside responsive animations and emotive feedback that make the pet feel alive. Pawgram solves the problem of sterile, impersonal computing environments by delivering a tiny, persistent source of comfort and joyful companionship directly on your screen, offering a gentle, positive distraction during a busy or stressful day. </p>
 
 ---
+<h4> Users can: </h4>
+<p>🐶 Adopt a Pet – Choose from a variety of species like cats, dogs, birds, reptiles, and more. <br>
+🍖 Care for Your Pet – Feed, groom, and maintain their happiness and health. <br>
+🎮 Play Mini-Games – Keep your pet entertained and earn rewards. <br>
+🎁 Unlock Items – Buy toys, food, and accessories as your pet grows. <br>
+🏆 Daily Challenges – Complete tasks to earn bonuses. <br>
+👀 Showcase Mode – Share and show off your pet to friends. <br>
+🔄 Switch Pet – Change between adopted pets anytime. <br>
+</p>
+
+---
 
 <h3> 💌Object-oriented Principles 𓆝 𓆟 𓆞 𓆝</h3>
 <p> 
@@ -78,18 +89,6 @@ Pawgram
 │           └── UIUtils.java
 └── README.md
 ```
-
----
-
-<h4> User can: </h4>
-<p>🐶 Adopt a Pet – Choose from a variety of species like cats, dogs, birds, reptiles, and more. <br>
-🍖 Care for Your Pet – Feed, groom, and maintain their happiness and health. <br>
-🎮 Play Mini-Games – Keep your pet entertained and earn rewards. <br>
-🎁 Unlock Items – Buy toys, food, and accessories as your pet grows. <br>
-🏆 Daily Challenges – Complete tasks to earn bonuses. <br>
-👀 Showcase Mode – Share and show off your pet to friends. <br>
-🔄 Switch Pet – Change between adopted pets anytime. <br>
-</p>
 
 ---
 
