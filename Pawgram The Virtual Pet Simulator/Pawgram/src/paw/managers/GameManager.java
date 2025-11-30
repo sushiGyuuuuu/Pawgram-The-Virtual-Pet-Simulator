@@ -119,6 +119,7 @@ public class GameManager {
             System.out.println("Take good care of your new friend! ");
         }
         UIUtils.pause();
+        input.nextLine();
     }
 
     private void mainLoop() {
