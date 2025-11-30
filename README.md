@@ -127,7 +127,7 @@ java Main.java
   </tr>
 
   <tr>
-    <td><img src="Orquinaza.jpg" width="100" height="100"></td>
+    <td><img src="Orquinaza.jpg" width="95" height="95"></td>
     <td>
       <strong>Orquinaza, Marylein</strong><br/>
       <a href="https://github.com/yamahoera" target="_blank">
