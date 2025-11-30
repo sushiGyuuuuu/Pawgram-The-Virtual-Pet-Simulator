@@ -2,7 +2,7 @@
   
 <h1> ✨Pawgram: A Comfort Companion </h1>
 
-<h2> Built with Java, wrapped in warmth and creativity.♡ </h2>
+<h2> Built with Java, wrapped in warmth and creativity ♡ </h2>
 <h4> By: CS2103</h4>
 
 ---
