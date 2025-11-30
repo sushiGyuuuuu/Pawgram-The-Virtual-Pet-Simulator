@@ -140,12 +140,12 @@ Pawgram
 
 <h3> 𓇼 ⋆.˚ 𓆉 𓆝 𓆡⋆.˚ 𓇼 ACKNOWLEDGMENT 𓇼 ⋆.˚ 𓆉 𓆝 𓆡⋆.˚ 𓇼 </h3>
 <p> 
-  The Pawkeepers would like to express their deepest gratitude for the successful completion of this final project.
+  The <strong>Pawkeepers</strong> would like to express their deepest gratitude for the successful completion of this final project.
 We are thankful for the effort, teamwork, and dedication we poured into developing Pawgram.
 
-We extend our appreciation to our instructor, ma'am Fatima Agdon, for her guidance and for teaching us the concepts that made this project possible.
+We extend our appreciation to our instructor, <strong>Ma'am Fatima Agdon</strong>, for her guidance and for teaching us the concepts that made this project possible.
 
-Lastly, we thank Biskit, Chocolate, and Dixie, our beloved pets, for inspiring us and reminding us how meaningful real-lide pet care and companion can be.🎀💝
+Lastly, we thank <strong>Biskit, Chocolate, and Dixie</strong>, our beloved pets, for inspiring us and reminding us how meaningful real-lide pet care and companion can be.🎀💝
 </p> 
 </div>
 
