@@ -315,7 +315,7 @@ public class GameManager {
         if (pet.getLevel() >= 3) {
             System.out.printf ("│ %-15s: %-30s      │\n", "Breeding Ready", pet.isReadyToBreed() ? "Yes" : "No");
             if (pet.getIsPregnant()) {
-                System.out.printf ("│ %-15s: %-30d%%     │\n", "Pregnancy", pet.getPregnancyProgress());
+                System.out.printf ("│ %-15s: %-30s      │\n", "Pregnancy", pet.getPregnancyProgress() + "%");
             }
         }
         
