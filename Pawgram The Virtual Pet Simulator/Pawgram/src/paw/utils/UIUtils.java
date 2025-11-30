@@ -1,5 +1,7 @@
 package paw.utils;
 
+import java.util.Scanner;
+
 public class UIUtils {
     
     // Box drawing characters
@@ -21,11 +23,6 @@ public class UIUtils {
         String middle = BOX_VERTICAL + "  " + title + "  " + BOX_VERTICAL;
         String bottom = BOX_BOTTOM_LEFT + BOX_HORIZONTAL.repeat(title.length() + 4) + BOX_BOTTOM_RIGHT;
         return border + "\n" + middle + "\n" + bottom + "\n";
-    }
-
-    // Method to create a section header
-    public static String createSectionHeader(String text) {
-        return "▶ " + text;
     }
 
     // Method to create a separator line
@@ -149,6 +146,30 @@ public class UIUtils {
             System.in.read();
         } catch (Exception e) {
             // Ignore exceptions
+        }
+    }
+
+    // UNIVERSAL SAFE INTEGER INPUT
+    public static int getValidatedInt(Scanner input, int min, int max) {
+        while (true) {
+            try {
+                String raw = input.nextLine().trim();
+
+            // Ensure it's an integer
+                int value = Integer.parseInt(raw);
+
+            // Ensure it is within valid ranges
+                if (value < min || value > max) {
+                    System.out.println("Please enter a number between " + min + " and " + max + ".");
+                    System.out.print("Try again: ");
+                    continue;
+                }
+
+                return value;
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input! Please enter a valid number.");
+                System.out.print("Try again: ");
+            }
         }
     }
 }

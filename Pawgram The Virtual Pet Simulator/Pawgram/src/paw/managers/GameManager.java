@@ -25,8 +25,7 @@ public class GameManager {
         System.out.println("2) Load Game");
         System.out.print("\nSelect: ");
         
-        int sel = input.nextInt();
-        input.nextLine();
+        int sel = UIUtils.getValidatedInt(input, 1, 2);
         
         if (sel == 2) {
             if (!loadGame()) {
@@ -52,6 +51,7 @@ public class GameManager {
         System.out.println("\n" + UIUtils.centerText("Your Virtual Pet Adventure Awaits!", 60));
         System.out.println("\n" + UIUtils.createSeparator(60));
         UIUtils.pause();
+        input.nextLine();
     }
 
     private boolean loadGame() {
@@ -96,8 +96,7 @@ public class GameManager {
         System.out.println("└──────────────────────────┘");
         System.out.print("\nSelect: ");
 
-        int choice = input.nextInt();
-        input.nextLine();
+        int choice = UIUtils.getValidatedInt(input,1, 6);
         UIUtils.clearScreen();
 
         Pets p = petManager.createPet(choice, name);
@@ -129,47 +128,69 @@ public class GameManager {
             displayMainMenu();
             
             System.out.print("\nSelect: ");
-            choice = input.nextInt();
-            input.nextLine();
-            UIUtils.clearScreen();
+            choice = UIUtils.getValidatedInt(input, 0, 11);
 
             switch (choice) {
-                case 1: 
+                case 1:
+                    UIUtils.clearScreen(); 
                     feedPet();
+                    input.nextLine();
                     break;
                 case 2:
+                    UIUtils.clearScreen();
                     playWithPet();
+                    input.nextLine();
                     break;
                 case 3:
+                    UIUtils.clearScreen();
                     putPetToSleep();
+                    input.nextLine();
                     break;
                 case 4:
+                    UIUtils.clearScreen();
                     showStats();
+                    input.nextLine();
                     break;
                 case 5:
+                    UIUtils.clearScreen();
                     petManager.switchPet(player);
+                    input.nextLine();
                     break;
                 case 6:
+                    UIUtils.clearScreen();
                     shop.openShop(player);
+                    input.nextLine();
                     break;
                 case 7:
+                    UIUtils.clearScreen();
                     openInventory();
+                    input.nextLine();
                     break;
                 case 8:
+                    UIUtils.clearScreen();
                     petManager.breedPets(player);
+                    input.nextLine();
                     break;
                 case 9:
+                    UIUtils.clearScreen();
                     petManager.manageOffspring(player);
+                    input.nextLine();
                     break;
                 case 10:
+                    UIUtils.clearScreen();
                     saveGame();
+                    input.nextLine();
                     break;
                 case 11:
+                    UIUtils.clearScreen();
                     loadGame();
+                    input.nextLine();
                     break;
                 case 0:
+                    UIUtils.clearScreen();
                     System.out.println(UIUtils.createTitleBox("GOODBYE!"));
                     System.out.println("Thanks for playing Pawgram! ");
+                    input.nextLine();
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again!");
@@ -197,10 +218,10 @@ public class GameManager {
 
         if (activePet.getIsPregnant()) {
             System.out.println(UIUtils.createTitleBox("PREGNANCY UPDATE"));
-            System.out.println("🤰 " + activePet.getPetName() + " is pregnant!");
+            System.out.println(activePet.getPetName() + " is pregnant!");
             System.out.println("Pregnancy Progress: " + activePet.getPregnancyProgress() + "%");
             if (activePet.getPregnancyProgress() >= 100) {
-                System.out.println("🎉 " + activePet.getPetName() + " is ready to give birth!");
+                System.out.println(activePet.getPetName() + " is ready to give birth!");
                 System.out.println("Visit 'Manage Offspring' to deliver the baby!");
             } else {
                 System.out.println("Care for " + activePet.getPetName() + " to progress the pregnancy!");
@@ -213,7 +234,7 @@ public class GameManager {
         int pregnantPetsCount = countPregnantPets();
         if (pregnantPetsCount > 0) {
             System.out.println(UIUtils.createTitleBox("PREGNANCY ALERT"));
-            System.out.println("You have " + pregnantPetsCount + " pregnant pet(s)! 🤰");
+            System.out.println("You have " + pregnantPetsCount + " pregnant pet(s)!");
             System.out.println("Visit 'Manage Offspring' to check on them!");
             System.out.println();
         }
@@ -324,14 +345,13 @@ public class GameManager {
             System.out.println("Items in your inventory:");
             System.out.println("┌─────────────────────────────────────┐");
             for (int i = 0; i < player.getInventory().size(); i++) {
-                System.out.printf("│ %2d. %-30s │\n", i + 1, player.getInventory().get(i).getItemName());
+                System.out.printf("│ %2d. %-30s  │\n", i + 1, player.getInventory().get(i).getItemName());
             }
             System.out.println("└─────────────────────────────────────┘");
             
             System.out.println("\n0. Back to Menu");
             System.out.print("Select item to use: ");
-            int sel = input.nextInt();
-            input.nextLine();
+            int sel = UIUtils.getValidatedInt(input, 0, player.getInventory().size());
             
             if (sel > 0 && sel <= player.getInventory().size()) {
                 player.useItem(sel - 1, player.getActivePet());

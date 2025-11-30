@@ -55,8 +55,7 @@ public class ShopManager {
             System.out.println(UIUtils.menuOption(0, "Exit Shop"));
             System.out.print("\nChoose: ");
 
-            choice = input.nextInt();
-            input.nextLine();
+            choice = UIUtils.getValidatedInt(input, 0, 3);
 
             switch (choice) {
                 case 1: 
@@ -70,6 +69,7 @@ public class ShopManager {
                     break;
                 case 0: 
                     System.out.println("Leaving shop...");
+                    UIUtils.pause();
                     break;
                 default: 
                     System.out.println("Invalid choice.");
@@ -99,8 +99,7 @@ public class ShopManager {
         System.out.println("\n0. Cancel");
         System.out.print("Choose: ");
 
-        int choice = input.nextInt();
-        input.nextLine();
+        int choice = UIUtils.getValidatedInt(input, 0, 7);
 
         int price = 0;
         FoodItem food = null;
@@ -154,6 +153,7 @@ public class ShopManager {
         System.out.println("You bought: " + food.getItemName() + " for " + price + " coins!");
         System.out.println("Remaining coins: " + player.getCoins());
         UIUtils.pause();
+        input.nextLine();
     }
 
     private void buyAccessory(Player player) {
@@ -175,8 +175,7 @@ public class ShopManager {
         System.out.println("\n0. Cancel");
         System.out.print("Choose: ");
 
-        int choice = input.nextInt();
-        input.nextLine();
+        int choice = UIUtils.getValidatedInt(input, 0, 5);
 
         int price = 0;
         AccessoryItem item = null;
@@ -221,10 +220,11 @@ public class ShopManager {
         player.setCoins(player.getCoins() - price);
         player.getInventory().add(item);
 
-        System.out.println("✅ You bought: " + item.getItemName() + " for " + price + " coins!");
+        System.out.println("You bought: " + item.getItemName() + " for " + price + " coins!");
         System.out.println("Remaining coins: " + player.getCoins());
         System.out.println("Use it from your inventory to make your pet happier!");
         UIUtils.pause();
+        input.nextLine();
     }
 
     private void adoptPet(Player player) {
@@ -249,8 +249,7 @@ public class ShopManager {
         System.out.println("\n0. Cancel");
         System.out.print("Choose pet to adopt: ");
 
-        int choice = input.nextInt();
-        input.nextLine();
+        int choice = UIUtils.getValidatedInt(input, 0, 6);
 
         if (choice == 0) {
             System.out.println("Adoption cancelled.");
@@ -301,7 +300,7 @@ public class ShopManager {
         UIUtils.clearScreen();
         System.out.println(UIUtils.createTitleBox("ADOPTION SUCCESSFUL!"));
         System.out.println(UIUtils.getPetAsciiArt(newPet.getPetSpecies()));
-        System.out.println("🎉 Congratulations! You adopted " + PetUtils.capitalizeFirstLetter(newPet.getPetName()) + "!");
+        System.out.println("Congratulations! You adopted " + PetUtils.capitalizeFirstLetter(newPet.getPetName()) + "!");
         System.out.println("Species: " + newPet.getPetSpecies());
         System.out.println("Gender: " + newPet.getGender());
         System.out.println("Starting Level: " + newPet.getLevel());
@@ -317,5 +316,6 @@ public class ShopManager {
         }
         
         UIUtils.pause();
+        input.nextLine();
     }
 }
