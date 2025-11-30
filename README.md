@@ -11,19 +11,24 @@
 </div>
 
 ---
+<div align="justify">
 <h4> Overview ₍^. .^₎⟆ </h4>
 <p> Pawgram is a Java-based program designed to combat digital loneliness and provide a moment of calm by offering a simple, charming virtual pet. Its main features include interactive care routines like feeding and playing, alongside responsive animations and emotive feedback that make the pet feel alive. Pawgram solves the problem of sterile, impersonal computing environments by delivering a tiny, persistent source of comfort and joyful companionship directly on your screen, offering a gentle, positive distraction during a busy or stressful day. </p>
 
 ---
 
-<h4> User can: </h4>
-<p>🐶 Adopt a Pet – Choose from a variety of species like cats, dogs, birds, reptiles, and more. <br>
-🍖 Care for Your Pet – Feed, groom, and maintain their happiness and health. <br>
-🎮 Play Mini-Games – Keep your pet entertained and earn rewards. <br>
-🎁 Unlock Items – Buy toys, food, and accessories as your pet grows. <br>
-🏆 Daily Challenges – Complete tasks to earn bonuses. <br>
-👀 Showcase Mode – Share and show off your pet to friends. <br>
-🔄 Switch Pet – Change between adopted pets anytime. <br>
+<h3> 💌Object-oriented Principles 𓆝 𓆟 𓆞 𓆝</h3>
+<p> 
+🐔ENCAPSULATION- means bundling data (variables) and methods that operate on that data inside a class, while restricting accessibility if not included in the same package using access modifiers like protected. It protects the data and allows controlled access from outside packages through the use of getters and setters. 
+  <br>
+  
+🐺INHERITANCE- lets one class inherit fields and methods from another class. It promotes code reuse and creates a parent–child relationship (e.g., Dog extends Mammal or Mammal extends Pets). The Pets class encapsulates all the shared attributes and behaviors that every virtual pet must possess—such as name, species, mood levels, energy, and core interactions—while declaring abstract methods like makeSound(), move(), and eatFood() that force subclasses to provide their specific implementations. 
+  <br>
+  
+🐰POLYMORPHISM- allows one action to behave differently depending on the object performing it. This includes the use abstract methods, allowing different pet subclasses (like dogs, cats, or birds) to provide their own unique implementations of common behaviors—so while all pets can make sounds, a dog might bark while a cat meows, and the system can treat them uniformly as Pets objects while still executing their specific behaviors at runtime.  
+  <br>
+🐷ABSTRACTION- focuses on showing only essential features while hiding unnecessary details. This is done using abstract classes and interfaces to define behavior without showing full implementation. The Pets class is declared as an abstract class, meaning it cannot be instantiated directly but instead provides a conceptual blueprint for what constitutes a virtual pet without specifying how each behavior is actually implemented. Through its abstract methods like makeSound(), move(), and eatFood(), it defines the contract of what every pet must be able to do while completely concealing the specific mechanics of how different pets will accomplish these actions.
+  <br>
 </p>
 
 ---
@@ -74,18 +79,14 @@ Pawgram
 
 ---
 
-<h3> 💌Object-oriented Principles 𓆝 𓆟 𓆞 𓆝</h3>
-<p> 
-🐔ENCAPSULATION- means bundling data (variables) and methods that operate on that data inside a class, while restricting direct access using access modifiers like private. It protects the data and allows controlled access through getters and setters. 
-  <br>
-  
-🐺INHERITANCE- lets one class inherit fields and methods from another class. It promotes code reuse and creates a parent–child relationship (e.g., Dog extends Mammal). 
-  <br>
-  
-🐰POLYMORPHISM- allows one action to behave differently depending on the object performing it. This includes method overriding (same method, different behavior in subclasses) and method overloading.  
-  <br>
-🐷ABSTRACTION- focuses on showing only essential features while hiding unnecessary details. This is done using abstract classes and interfaces to define behavior without showing full implementation. 
-  <br>
+<h4> User can: </h4>
+<p>🐶 Adopt a Pet – Choose from a variety of species like cats, dogs, birds, reptiles, and more. <br>
+🍖 Care for Your Pet – Feed, groom, and maintain their happiness and health. <br>
+🎮 Play Mini-Games – Keep your pet entertained and earn rewards. <br>
+🎁 Unlock Items – Buy toys, food, and accessories as your pet grows. <br>
+🏆 Daily Challenges – Complete tasks to earn bonuses. <br>
+👀 Showcase Mode – Share and show off your pet to friends. <br>
+🔄 Switch Pet – Change between adopted pets anytime. <br>
 </p>
 
 ---
