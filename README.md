@@ -149,7 +149,7 @@ java Main.java
   </tr>
 
   <tr>
-    <td><img src="IMAGE HERE" width="100" height="100"></td>
+    <td><img src="Velasco.jpg" width="100" height="100"></td>
     <td>
       <strong>Velasco, Iah Shanelle</strong><br/>
       <a href="github.com/macherieshanelle" target="_blank">
