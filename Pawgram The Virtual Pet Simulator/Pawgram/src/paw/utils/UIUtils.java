@@ -37,7 +37,9 @@ public class UIUtils {
         int empty = length - filled;
         
         String bar = "█".repeat(filled) + "░".repeat(empty);
-        return String.format("[%s] %d/%d", bar, current, max);
+        String numbers = " " + current + "/" + max;
+
+        return bar + numbers;
     }
 
     // Method to center text
