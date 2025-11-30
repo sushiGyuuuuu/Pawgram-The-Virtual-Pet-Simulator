@@ -325,7 +325,7 @@ public class GameManager {
         System.out.printf ("│ %-15s: %-30s      │\n", "Environment", pet.getPreferredEnvironment());
         System.out.println("└──────────────────────────────────────────────────────┘");
         
-        System.out.print("\nPress Enter to continue...");
+        UIUtils.pause();
         input.nextLine();
     }
 

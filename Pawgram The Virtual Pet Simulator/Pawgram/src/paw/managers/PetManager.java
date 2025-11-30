@@ -56,11 +56,14 @@ public class PetManager {
 
         player.setActivePet(player.getOwnedPets().get(choice - 1));
         System.out.println("Switched active pet to " + player.getActivePet().getPetName());
+
+        UIUtils.pause();
     }
 
     public void breedPets(Player player) {
         if (player.getOwnedPets().size() < 2) {
             System.out.println("You need at least two pets to breed!");
+            UIUtils.pause();
             return;
         }
 
@@ -214,6 +217,7 @@ public class PetManager {
     public void manageOffspring(Player player) {
         if (player.getOffsprings().isEmpty()) {
             System.out.println("You have no offspring to manage.");
+            UIUtils.pause();
             return;
         }
 
@@ -236,6 +240,7 @@ public class PetManager {
             case 1:
                 player.careForOffspring();
                 System.out.println("You cared for all offspring! They're growing well.");
+                UIUtils.pause();
                 break;
             case 2:
                 System.out.print("Select offspring to promote: ");
@@ -243,8 +248,10 @@ public class PetManager {
 
                 Offspring selected = player.getOffsprings().get(offspringChoice);
                 player.promoteOffspringToPet(selected);
+                UIUtils.pause();
                 break;
             case 0:
+                UIUtils.pause();
                 return;
             default:
                 System.out.println("Invalid choice!");
