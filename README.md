@@ -79,7 +79,7 @@ Pawgram
 🐔ENCAPSULATION- means bundling data (variables) and methods that operate on that data inside a class, while restricting direct access using access modifiers like private. It protects the data and allows controlled access through getters and setters. 
   <br>
   
-🐺INHERITANCE- lets one class inherit fields and methods from another class. It promotes code reuse and creates a parent–child relationship (e.g., Dog extends Pet). 
+🐺INHERITANCE- lets one class inherit fields and methods from another class. It promotes code reuse and creates a parent–child relationship (e.g., Dog extends Mammal). 
   <br>
   
 🐰POLYMORPHISM- allows one action to behave differently depending on the object performing it. This includes method overriding (same method, different behavior in subclasses) and method overloading.  
