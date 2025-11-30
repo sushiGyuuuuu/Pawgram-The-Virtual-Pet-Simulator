@@ -3,7 +3,7 @@
 <h1> ✨Pawgram: A Comfort Companion </h1>
 
 <h2> Built with Java, wrapped in warmth and creativity ♡ </h2>
-<h4> By: CS2103</h4>
+<h4> BY: CS-2103</h4>
 
 ---
 
@@ -118,7 +118,7 @@ java Main.java
 
 <div align="center">
   
-<h2> ≽^• ˕ • ྀི≼ Contributors ≽^• ˕ • ྀི≼</h2>
+<h2> ≽^• ˕ • ྀི≼ PAWGRAMMERS ≽^• ˕ • ྀི≼</h2>
 <table>
   <tr>
     <th></th>
