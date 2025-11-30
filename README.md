@@ -12,7 +12,7 @@
 
 ---
 <h4> Overview ₍^. .^₎⟆ </h4>
-<p> Pawgram is a Java-based virtual pet program designed to bring comfort, joy, and a tiny spark of companionship to your screen. </p>
+<p> Pawgram is a Java-based program designed to combat digital loneliness and provide a moment of calm by offering a simple, charming virtual pet. Its main features include interactive care routines like feeding and playing, alongside responsive animations and emotive feedback that make the pet feel alive. Pawgram solves the problem of sterile, impersonal computing environments by delivering a tiny, persistent source of comfort and joyful companionship directly on your screen, offering a gentle, positive distraction during a busy or stressful day. </p>
 
 ---
 
