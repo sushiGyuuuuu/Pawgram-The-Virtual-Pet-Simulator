@@ -60,12 +60,15 @@ public class ShopManager {
             switch (choice) {
                 case 1: 
                     buyFood(player); 
+                    input.nextLine();
                     break;
                 case 2: 
                     buyAccessory(player); 
+                    input.nextLine();
                     break;
                 case 3: 
                     adoptPet(player); 
+                    input.nextLine();
                     break;
                 case 0: 
                     System.out.println("Leaving shop...");
@@ -153,7 +156,6 @@ public class ShopManager {
         System.out.println("You bought: " + food.getItemName() + " for " + price + " coins!");
         System.out.println("Remaining coins: " + player.getCoins());
         UIUtils.pause();
-        input.nextLine();
     }
 
     private void buyAccessory(Player player) {
@@ -224,7 +226,6 @@ public class ShopManager {
         System.out.println("Remaining coins: " + player.getCoins());
         System.out.println("Use it from your inventory to make your pet happier!");
         UIUtils.pause();
-        input.nextLine();
     }
 
     private void adoptPet(Player player) {
@@ -253,6 +254,7 @@ public class ShopManager {
 
         if (choice == 0) {
             System.out.println("Adoption cancelled.");
+            UIUtils.pause();
             return;
         }
 
@@ -316,6 +318,5 @@ public class ShopManager {
         }
         
         UIUtils.pause();
-        input.nextLine();
     }
 }
