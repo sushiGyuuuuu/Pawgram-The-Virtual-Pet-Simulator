@@ -30,9 +30,10 @@
 🐷ABSTRACTION- focuses on showing only essential features while hiding unnecessary details. This is done using abstract classes and interfaces to define behavior without showing full implementation. The Pets class is declared as an abstract class, meaning it cannot be instantiated directly but instead provides a conceptual blueprint for what constitutes a virtual pet without specifying how each behavior is actually implemented. Through its abstract methods like makeSound(), move(), and eatFood(), it defines the contract of what every pet must be able to do while completely concealing the specific mechanics of how different pets will accomplish these actions.
   <br>
 </p>
+</div>
 
 ---
-
+<div align="center">
  ∧,,,∧ <br>
 (  ̳• · • ̳) <br>
 /    づ♡   Welcome Pawkeepers! ⏾⋆.˚ ✦︎ ⛧٠࣪⭑<br> 
@@ -40,7 +41,8 @@
 ---
 
 <h3> ── .✦ Project Structure ✦. ── </h3>
- 
+</div>
+
 ```
 Pawgram
 ├── src
