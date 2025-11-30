@@ -297,33 +297,33 @@ public class GameManager {
         Pets pet = player.getActivePet();
         System.out.println(UIUtils.createTitleBox("DETAILED STATS"));
         
-        System.out.println("┌────────────────────────────────────────────┐");
-        System.out.printf ("│ %-15s: %-20s      │\n", "Name", pet.getPetName());
-        System.out.printf ("│ %-15s: %-20s      │\n", "Species", pet.getPetSpecies());
-        System.out.printf ("│ %-15s: %-20s      │\n", "Gender", pet.getGender());
-        System.out.println("├────────────────────────────────────────────┤");
-        System.out.printf ("│ %-15s: %-20s │\n", "Mood", UIUtils.createProgressBar(pet.getMoodLevel(), 100, 15));
-        System.out.printf ("│ %-15s: %-20s │\n", "Energy", UIUtils.createProgressBar(pet.getEnergy(), 100, 15));
-        System.out.printf ("│ %-15s: %-20s │\n", "Happiness", UIUtils.createProgressBar(pet.getHappiness(), 100, 15));
-        System.out.println("├────────────────────────────────────────────┤");
-        System.out.printf ("│ %-15s: %-20d      │\n", "Level", pet.getLevel());
-        System.out.printf ("│ %-15s: %-20d      │\n", "Experience", pet.getExperience());
-        System.out.printf ("│ %-15s: %-20s      │\n", "Health", pet.getIsSick() ? "Sick" : "Healthy");
-        System.out.println("├────────────────────────────────────────────┤");
+        System.out.println("┌──────────────────────────────────────────────────────┐");
+        System.out.printf ("│ %-15s: %-30s      │\n", "Name", pet.getPetName());
+        System.out.printf ("│ %-15s: %-30s      │\n", "Species", pet.getPetSpecies());
+        System.out.printf ("│ %-15s: %-30s      │\n", "Gender", pet.getGender());
+        System.out.println("├──────────────────────────────────────────────────────┤");
+        System.out.printf ("│ %-15s: %-30s      │\n", "Mood", UIUtils.createProgressBar(pet.getMoodLevel(), 100, 15));
+        System.out.printf ("│ %-15s: %-30s      │\n", "Energy", UIUtils.createProgressBar(pet.getEnergy(), 100, 15));
+        System.out.printf ("│ %-15s: %-30s      │\n", "Happiness", UIUtils.createProgressBar(pet.getHappiness(), 100, 15));
+        System.out.println("├──────────────────────────────────────────────────────┤");
+        System.out.printf ("│ %-15s: %-30d      │\n", "Level", pet.getLevel());
+        System.out.printf ("│ %-15s: %-30d      │\n", "Experience", pet.getExperience());
+        System.out.printf ("│ %-15s: %-30s      │\n", "Health", pet.getIsSick() ? "Sick" : "Healthy");
+        System.out.println("├──────────────────────────────────────────────────────┤");
         
         // Breeding info
         if (pet.getLevel() >= 3) {
-            System.out.printf ("│ %-15s: %-20s      │\n", "Breeding Ready", pet.isReadyToBreed() ? "Yes" : "No");
+            System.out.printf ("│ %-15s: %-30s      │\n", "Breeding Ready", pet.isReadyToBreed() ? "Yes" : "No");
             if (pet.getIsPregnant()) {
-                System.out.printf ("│ %-15s: %-20d%%      │\n", "Pregnancy", pet.getPregnancyProgress());
+                System.out.printf ("│ %-15s: %-30d%%     │\n", "Pregnancy", pet.getPregnancyProgress());
             }
         }
         
         // Compatibility traits
-        System.out.printf ("│ %-15s: %-20s      │\n", "Nature", pet.getNature());
-        System.out.printf ("│ %-15s: %-20s      │\n", "Favorite Food", pet.getFavoriteFood());
-        System.out.printf ("│ %-15s: %-20s      │\n", "Environment", pet.getPreferredEnvironment());
-        System.out.println("└────────────────────────────────────────────┘");
+        System.out.printf ("│ %-15s: %-30s      │\n", "Nature", pet.getNature());
+        System.out.printf ("│ %-15s: %-30s      │\n", "Favorite Food", pet.getFavoriteFood());
+        System.out.printf ("│ %-15s: %-30s      │\n", "Environment", pet.getPreferredEnvironment());
+        System.out.println("└──────────────────────────────────────────────────────┘");
         
         System.out.print("\nPress Enter to continue...");
         input.nextLine();
