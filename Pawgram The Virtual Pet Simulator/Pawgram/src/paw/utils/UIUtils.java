@@ -36,7 +36,7 @@ public class UIUtils {
         int filled = (int) (length * percentage);
         int empty = length - filled;
         
-        String bar = "█".repeat(filled) + "░".repeat(empty);
+        String bar = "[" + "█".repeat(filled) + "░".repeat(empty) + "]";
         String numbers = " " + current + "/" + max;
 
         return bar + numbers;
