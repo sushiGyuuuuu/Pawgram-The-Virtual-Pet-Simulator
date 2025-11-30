@@ -108,7 +108,7 @@ Pawgram
         <img src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white">
       </a>
     </td>
-    <td>Lead Developer</td>
+    <td>System Designer</td>
   </tr>
 
   <tr>
@@ -119,7 +119,7 @@ Pawgram
         <img src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white">
       </a>
     </td>
-    <td>System Designer</td>
+    <td>Lead Developer</td>
   </tr>
 
   <tr>
