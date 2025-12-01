@@ -1,8 +1,8 @@
 package paw.models;
 
 public class Snake extends Reptile{
-    public Snake(String name, String accessories, boolean isSick) {
-        super(name, "Snake", accessories, isSick);
+    public Snake(String name, String accs, String gender, boolean sick) {
+        super(name, "Snake", accs, gender, "Reptile", "Calm", "Vegetables", "Terrarium", sick);
     }
 
     @Override

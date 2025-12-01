@@ -161,7 +161,72 @@ Pawgram-The-Virtual-Pet-Simulator-main.zip
 Sample Outputs
 </h2>
 </div>
-<h2>Game Start</h2>
+
+### Game Start
+
+```
+██████╗  █████╗ ██╗    ██╗ ██████╗ ██████╗  █████╗ ███╗   ███╗
+██╔══██╗██╔══██╗██║    ██║██╔════╝ ██╔══██╗██╔══██╗████╗ ████║
+██████╔╝███████║██║ █╗ ██║██║  ███╗██████╔╝███████║██╔████╔██║
+██╔═══╝ ██╔══██║██║███╗██║██║   ██║██╔══██╗██╔══██║██║╚██╔╝██║
+██║     ██║  ██║╚███╔███╔╝╚██████╔╝██║  ██║██║  ██║██║ ╚═╝ ██║
+╚═╝     ╚═╝  ╚═╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝
+
+
+             Your Virtual Pet Adventure Awaits!
+
+────────────────────────────────────────────────────────────
+
+Press Enter to continue...
+```
+
+### Main Menu
+
+```
+╔═══════════════════╗
+║  Michael the Dog  ║
+╚═══════════════════╝
+  __      
+o'')}____//
+ `_/      )
+ (_(_/-(_/ 
+
+Status:
+   Gender: Male
+   Mood: [██████████] 100/100
+   Energy: [██████████] 100/100
+   Level: 1
+   Health: Healthy
+
+╔═════════════╗
+║  MAIN MENU  ║
+╚═════════════╝
+
+ 1. Feed Pet
+ 2. Play with Pet
+ 1. Feed Pet
+ 1. Feed Pet
+ 2. Play with Pet
+ 3. Put Pet to Sleep
+ 4. View Detailed Stats
+ 5. Switch Active Pet
+ 6. Visit Shop
+ 7. Open Inventory
+ 8. Breed Pets
+ 9. Manage Offspring
+10. Save Game
+11. Load Game
+ 0. Exit Game
+
+────────────────────────────────────────
+Player: Gab
+Coins: 9999949
+Pets: 2
+Offspring: 0
+
+Select:
+```
+---
 <div align="center">
   
 <h2> ≽^• ˕ • ྀི≼ PAWGRAMMERS ≽^• ˕ • ྀི≼</h2>
@@ -173,7 +238,7 @@ Sample Outputs
   </tr>
 
   <tr>
-    <td><img src="Orquinaza.jpg" width="95" height="95"></td>
+    <td><img src="Images/Orquinaza.jpg" width="95" height="95"></td>
     <td>
       <strong>Orquinaza, Marylein</strong><br/>
       <a href="https://github.com/yamahoera" target="_blank">
@@ -195,7 +260,7 @@ Sample Outputs
   </tr>
 
   <tr>
-    <td><img src="Velasco.jpg" width="100" height="100"></td>
+    <td><img src="Images/Velasco.jpg" width="100" height="100"></td>
     <td>
       <strong>Velasco, Iah Shanelle</strong><br/>
       <a href="github.com/macherieshanelle" target="_blank">
