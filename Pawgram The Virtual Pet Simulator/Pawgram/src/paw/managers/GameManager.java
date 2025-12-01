@@ -53,7 +53,6 @@ public class GameManager {
         System.out.println("\n" + UIUtils.centerText("Your Virtual Pet Adventure Awaits!", 60));
         System.out.println("\n" + UIUtils.createSeparator(60));
         UIUtils.pause();
-        input.nextLine();
     }
 
     private boolean loadGame() {
@@ -454,4 +453,5 @@ public class GameManager {
         }
         UIUtils.pause();
     }
+
 }
