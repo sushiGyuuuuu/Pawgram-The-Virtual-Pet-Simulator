@@ -55,38 +55,38 @@
 </div>
 
 ```
-Pawgram
-├── src
-│   └── paw
-│       ├── Main.java                
-│       ├── managers                  
-│       │   ├── GameManager.java
-│       │   ├── PetManager.java
-│       │   └── ShopManager.java
-│       ├── models                    
-│       │   ├── AccessoryItem.java
-│       │   ├── Bird.java
-│       │   ├── Cat.java
-│       │   ├── Dog.java
-│       │   ├── Fish.java
-│       │   ├── FoodItem.java
-│       │   ├── Goldfish.java
-│       │   ├── Item.java
-│       │   ├── Lizard.java
-│       │   ├── Mammal.java
-│       │   ├── Offspring.java
-│       │   ├── Parrot.java
-│       │   ├── Pets.java
-│       │   ├── Player.java
-│       │   ├── Reptile.java
-│       │   ├── Snake.java
-│       │   ├── ToyItem.java
-│       │   └── Turtle.java
-│       ├── services                  
-│       │   └── SaveSystem.java
-│       └── utils                    
-│           └── PetUtils.java
-│           └── UIUtils.java
+📂Pawgram
+├── 📂src
+│   └── 📂paw
+│       ├── ♨️Main.java                
+│       ├── 📂managers                  
+│       │   ├── ♨️GameManager.java
+│       │   ├── ♨️PetManager.java
+│       │   └── ♨️ShopManager.java
+│       ├── 📂models                    
+│       │   ├── ♨️AccessoryItem.java
+│       │   ├── ♨️Bird.java
+│       │   ├── ♨️Cat.java
+│       │   ├── ♨️Dog.java
+│       │   ├── ♨️Fish.java
+│       │   ├── ♨️FoodItem.java
+│       │   ├── ♨️Goldfish.java
+│       │   ├── ♨️Item.java
+│       │   ├── ♨️Lizard.java
+│       │   ├── ♨️Mammal.java
+│       │   ├── ♨️Offspring.java
+│       │   ├── ♨️Parrot.java
+│       │   ├── ♨️Pets.java
+│       │   ├── ♨️Player.java
+│       │   ├── ♨️Reptile.java
+│       │   ├── ♨️Snake.java
+│       │   ├── ♨️ToyItem.java
+│       │   └── ♨️Turtle.java
+│       ├── 📂services                  
+│       │   └── ♨️SaveSystem.java
+│       └── 📂utils                    
+│           └── ♨️PetUtils.java
+│           └── ♨️UIUtils.java
 └── README.md
 ```
 
@@ -96,21 +96,48 @@ Pawgram
 <h3>  How to Run the Program  <br>
     ◁ |⚙⌨⚙| ▷ </h3>
 </div>
-  
-<p> 
-Open your terminal in the src/ folder and run:
+<p>
+Download Pawgram The Virtual Pet Simulator in github as a .zip file.
 </p>
 
 ```
-javac Main.java
+Pawgram-The-Virtual-Pet-Simulator-main.zip
+```
+<p>
+Extract the .zip file and it should look something like this:
+</p>
+
+```
+📂Pawgram-The-Virtual-Pet-Simulator-main
+```
+<p>
+Navigate through the src folder
+</p>
+
+```
+📂Pawgram\📂src
+```
+<p> 
+Right click on the src/ folder and open in Terminal:
+</p>
+
+```
+Downloads\Pawgram-The-Virtual-Pet-Simulator-main\Pawgram The Virtual Pet Simulator\Pawgram\src>
+```
+<p>
+Type in this command to compile:
+</p>
+
+```
+Pawgram The Virtual Pet Simulator\Pawgram\src> javac Main.java
 ```
 
 <p>
-  Run the program using:
+If there was no errors in the compiling of the program, run the program using:
 </p>
 
 ```
-java Main.java
+Pawgram The Virtual Pet Simulator\Pawgram\src> java Main.java
 ```
 
 
