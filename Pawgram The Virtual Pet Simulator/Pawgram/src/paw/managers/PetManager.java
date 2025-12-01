@@ -3,20 +3,17 @@ package paw.managers;
 import paw.models.*;
 import paw.utils.PetUtils;
 import paw.utils.UIUtils;
-
 import java.util.Scanner;
-import java.util.Random;
 
 public class PetManager {
     private Scanner input = new Scanner(System.in);
-    private Random random = new Random();
 
     public Pets createPet(int choice, String name) {
         System.out.print("Name your pet: ");
         name = input.nextLine();
         name = PetUtils.capitalizeFirstLetter(name);
 
-        String gender = random.nextBoolean() ? "Male" : "Female";
+        String gender = Math.random() > 0.5 ? "Male" : "Female"; //50/50 chance male or female
 
         return switch (choice) {
             case 1 -> new Dog(name,"Collar", gender, false); 

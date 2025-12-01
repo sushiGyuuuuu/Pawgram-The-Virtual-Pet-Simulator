@@ -27,7 +27,7 @@ public abstract class Pets implements Serializable {
     protected boolean canBreed;
     protected boolean isPregnant;
 
-    // Constructor
+    //CONSTRUCTOR
     public Pets(
         String petName, String petSpecies, String accessories,
         String gender, String breedGroup, String nature,
@@ -57,9 +57,7 @@ public abstract class Pets implements Serializable {
         this.pregnancyProgress = 0;
     }
 
-    // ============================
-    //      GETTERS & SETTERS
-    // ============================
+    //GETTERS & SETTERS
     public String getPetName() { return petName; }
     public String getPetSpecies() { return petSpecies; }
     public String getAccessories() { return accessories; }
@@ -100,9 +98,7 @@ public abstract class Pets implements Serializable {
     public void setPregnancyProgress(int value) { pregnancyProgress = value; }
     public void setCanBreed(boolean value) { canBreed = value; }
 
-    // ============================
-    //      ABSTRACT METHODS
-    // ============================
+    //ABSTRACT METHODS
     public abstract void makeSound();
     public abstract void move();
     public abstract void eatFood();
@@ -111,10 +107,7 @@ public abstract class Pets implements Serializable {
     public abstract void sleep();
     public abstract void play();
 
-    // ============================
     //      STAT MODIFIERS
-    // ============================
-
     public void petExperience(int amount) {
         experience += amount;
         if (experience >= 100) {
@@ -157,10 +150,7 @@ public abstract class Pets implements Serializable {
         happiness = Math.min(100, happiness + amount);
     }
 
-    // ============================
     //      BREEDING SYSTEM
-    // ============================
-
     public boolean isReadyToBreed() {
         return level >= 3 &&
                !isSick &&
@@ -175,11 +165,10 @@ public abstract class Pets implements Serializable {
         int score = 0;
 
         // Species
-        if (petSpecies.equals(other.petSpecies)) score += 40;
-        else if (breedGroup.equals(other.breedGroup)) score += 20;
+        if (petSpecies.equals(other.petSpecies)) score += 40; //Same species
+        else if (breedGroup.equals(other.breedGroup)) score += 20; //Diff Species
 
-        // Temperament (CHANGED: from "nature")
-        if (nature.equals(other.nature)) score += 20;
+        if (nature.equals(other.nature)) score += 20; //Same Nature = more Compatible
         else if (areNaturesCompatible(nature, other.nature)) score += 10;
 
         // Environment
@@ -187,18 +176,17 @@ public abstract class Pets implements Serializable {
             score += 15;
 
         // Levels
-        int diff = Math.abs(level - other.level);
+        int diff = Math.abs(level - other.level); // The lower lvl diff = more compatible
         if (diff <= 2) score += 10;
         else if (diff <= 5) score += 5;
 
-        // Mood (CHANGED: from "Happiness" to be consistent with field name)
         if (moodLevel > 80 && other.moodLevel > 80) score += 15;
 
-        compatibilityScore = Math.min(100, score);
+        compatibilityScore = Math.min(100, score); //lesser value becomes score
         return compatibilityScore;
     }
 
-    // CHANGED: Method name for consistency
+    //Nature Compatibility Checker
     public boolean areNaturesCompatible(String temp1, String temp2) {
         switch (temp1) {
             case "Calm": return temp2.equals("Social") || temp2.equals("Shy");
@@ -211,7 +199,7 @@ public abstract class Pets implements Serializable {
         }
     }
 
-    // ADDED: Compatibility description method
+    //Compatibility description 
     public String getCompatibilityDescription(int score) {
         if (score >= 80) return "Perfect Match!";
         if (score >= 60) return "Very Compatible";
@@ -220,10 +208,7 @@ public abstract class Pets implements Serializable {
         return "Poor Match";
     }
 
-    // ============================
     //      PREGNANCY + BIRTH
-    // ============================
-
     public boolean progressPregnancy() {
         if (!isPregnant) return false;
 
@@ -246,16 +231,15 @@ public abstract class Pets implements Serializable {
         return false;
     }
 
-    // FIXED: giveBirth method to match Offspring constructor
     public Offspring giveBirth(String offspringName, Pets father) {
         if (!isPregnant || pregnancyProgress < 100) {
             return null;
         }
 
-        // Determine offspring gender (50/50 chance)
+        //Determine gender
         String offspringGender = Math.random() > 0.5 ? "Male" : "Female";
         
-        // Special case: chance for hybrid if different species but same breed group
+        //If hybrid
         String offspringSpecies = this.petSpecies;
         if (!this.petSpecies.equals(father.getPetSpecies()) && 
             this.breedGroup.equals(father.getBreedGroup()) &&
@@ -272,19 +256,18 @@ public abstract class Pets implements Serializable {
             father // father
         );
 
-        System.out.println(PetUtils.capitalizeFirstLetter(petName) + 
-                          " gave birth to " + offspringName + "!");
+        System.out.println(PetUtils.capitalizeFirstLetter(petName) + " gave birth to " + offspringName + "!");
 
-        // Reset pregnancy state
+        // Reset
         isPregnant = false;
         pregnancyProgress = 0;
-        breedCooldown = 5; // Cooldown before can breed again
-        petEnergy(-30); // Energy cost for giving birth
+        breedCooldown = 5; // 5 actions before being able to breed
+        petEnergy(-30);
 
         return offspring;
     }
 
-    // ADDED: Helper method for debugging
+    //Helper for debugging
     public String getStatus() {
         return String.format("%s (%s, %s) - Level: %d, Mood: %d, Energy: %d, Pregnant: %s", 
             petName, petSpecies, gender, level, moodLevel, energy, isPregnant);

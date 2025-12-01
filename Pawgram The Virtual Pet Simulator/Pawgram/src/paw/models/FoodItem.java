@@ -8,6 +8,8 @@ public class FoodItem extends Item{
         this.energyBoost = energyBoost;
     }
 
+    public int getEnergyBoost() {return energyBoost;}
+
     @Override
     public void useItem(Pets pet) {
         System.out.println(pet.getPetName() + " eats " + getItemName() + ".");

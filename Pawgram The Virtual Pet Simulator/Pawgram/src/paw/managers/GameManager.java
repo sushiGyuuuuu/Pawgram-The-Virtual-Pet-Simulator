@@ -1,5 +1,7 @@
 package paw.managers;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import paw.models.*;
 import paw.services.*;
@@ -215,7 +217,7 @@ public class GameManager {
                 activePet.getGender(), 
                 activePet.getIsPregnant()
             ));
-        
+        }
 
         if (activePet.getIsPregnant()) {
             System.out.println(UIUtils.createTitleBox("PREGNANCY UPDATE"));
@@ -229,7 +231,12 @@ public class GameManager {
             }
             System.out.println();
         }
-    }
+        // In displayMainMenu() after displaying pet info
+        int foodCount = countFoodInInventory();
+        if (foodCount == 0) {
+            System.out.println("\nWARNING: You have no food in inventory!");
+            System.out.println("Visit the shop (option 6) to buy food.");
+        }
     
     // PREGNANCY NOTIFICATION: Check for other pregnant pets
         int pregnantPetsCount = countPregnantPets();
@@ -260,9 +267,10 @@ public class GameManager {
         System.out.println("Coins: " + player.getCoins());
         System.out.println("Pets: " + player.getOwnedPets().size());
         System.out.println("Offspring: " + player.getOffsprings().size());
+        System.out.println("Food: " + countFoodInInventory());
 
         if (pregnantPetsCount > 0) {
-        System.out.println("Pregnant: " + pregnantPetsCount);
+            System.out.println("Pregnant: " + pregnantPetsCount);
         }
     }
     private int countPregnantPets() {
@@ -277,8 +285,92 @@ public class GameManager {
     }
     private void feedPet() {
         System.out.println(UIUtils.createTitleBox("FEEDING TIME"));
-        player.getActivePet().eatFood();
+    
+    // Check if player has any food in inventory
+        List<Item> foodItems = new ArrayList<>();
+        for (Item item : player.getInventory()) {
+            if (item instanceof FoodItem) {
+                foodItems.add(item);
+            }
+        }
+    
+        if (foodItems.isEmpty()) {
+            System.out.println("You don't have any food in your inventory!");
+            System.out.println("Visit the shop (option 6) to buy some food.");
+            UIUtils.pause();
+            return;
+        }
+    
+    // Display available food items
+        System.out.println("Select food to feed " + player.getActivePet().getPetName() + ":");
+        System.out.println("┌─────┬────────────────────┬──────────┬────────────────┐");
+        System.out.println("│ No. │ Food Item          │ Energy   │ Cost (Shop)    │");
+        System.out.println("├─────┼────────────────────┼──────────┼────────────────┤");
+    
+        for (int i = 0; i < foodItems.size(); i++) {
+            FoodItem food = (FoodItem) foodItems.get(i);
+            System.out.printf("│ %2d. │ %-18s │ +%-8d│ %-14d │\n", i + 1, 
+            food.getItemName(), 
+            food.getEnergyBoost(), 
+            food.getItemCost());
+        }
+        System.out.println("└─────┴────────────────────┴──────────┴────────────────┘");
+    
+        System.out.println("\n0. Cancel");
+        System.out.print("\nSelect food to use: ");
+    
+        int choice = UIUtils.getValidatedInt(input, 0, foodItems.size());
+    
+        if (choice == 0) {
+            System.out.println("Feeding cancelled.");
+            UIUtils.pause();
+            return;
+        }
+    
+    // Get the selected food item
+        FoodItem selectedFood = (FoodItem) foodItems.get(choice - 1);
+    
+    // Find its index in the main inventory to remove it
+        int inventoryIndex = -1;
+        for (int i = 0; i < player.getInventory().size(); i++) {
+            if (player.getInventory().get(i) == selectedFood) {
+                inventoryIndex = i;
+                break;
+            }
+        }
+    
+    // Use the food
+        System.out.println("\nFeeding " + player.getActivePet().getPetName() + " with " + selectedFood.getItemName() + "...");
+    
+    // Apply the food effects using the FoodItem's useItem method
+        selectedFood.useItem(player.getActivePet());
+    
+    // Remove the food from inventory
+        if (inventoryIndex != -1) {
+            player.getInventory().remove(inventoryIndex);
+        }
+    
+    // Show remaining food count
+        int remainingFood = countFoodInInventory();
+        System.out.println("\n" + player.getActivePet().getPetName() + " enjoyed the meal!");
+        System.out.println("Food remaining in inventory: " + remainingFood);
+    
+        if (remainingFood == 0) {
+            System.out.println("Warning: No food left! Visit the shop soon.");
+        }
+    
         UIUtils.pause();
+    }
+
+// Helper method to count food items in inventory
+    private int countFoodInInventory() {
+        int count = 0;
+        for (Item item : player.getInventory()) {
+            if (item instanceof FoodItem) {
+                count++;
+            }
+        }
+        return count;
     }
 
     private void playWithPet() {

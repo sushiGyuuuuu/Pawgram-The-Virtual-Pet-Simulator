@@ -43,10 +43,11 @@ public class ShopManager {
             UIUtils.clearScreen();
             System.out.println(UIUtils.createTitleBox("PET SHOP"));
             
-            // Display player info
+            //Player info
             System.out.println("Welcome, " + PetUtils.capitalizeFirstLetter(player.getPlayerName()) + "!");
             System.out.println("Coins: " + player.getCoins());
             System.out.println("Pets: " + player.getOwnedPets().size());
+            System.out.println("Food in inventory: " + countPlayerFood(player));
             System.out.println(UIUtils.createSeparator(40));
             
             System.out.println(UIUtils.menuOption(1, "Buy Food"));
@@ -79,6 +80,16 @@ public class ShopManager {
                     UIUtils.pause();
             }
         } while (choice != 0);
+    }
+
+    private int countPlayerFood(Player player) {
+        int count = 0;
+        for (Item item : player.getInventory()) {
+            if (item instanceof FoodItem) {
+                count++;
+            }
+        }
+        return count;
     }
 
     private void buyFood(Player player) {
