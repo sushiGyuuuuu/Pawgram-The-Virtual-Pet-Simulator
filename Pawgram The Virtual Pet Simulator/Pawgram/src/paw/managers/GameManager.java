@@ -31,7 +31,6 @@ public class GameManager {
         
         if (sel == 2) {
             if (!loadGame()) { // If no save file
-                input.nextLine();
                 newPlayerFlow(); // Proceed to character creation
             }
         } else {
@@ -455,3 +454,4 @@ public class GameManager {
     }
 
 }
+
