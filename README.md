@@ -3,11 +3,11 @@
 <h1> ✨Pawgram: A Comfort Companion </h1>
 
 <h2> Built with Java, wrapped in warmth and creativity ♡ </h2>
-<h4> <i>BY: CS-2103</i></h4>
+<h4> BY: CS-2103</h4>
 
 ---
 
-<h3> Step into Pawgram, where every pet finds a loving home🐕</h3>
+<h3> <i>Step into Pawgram, where every pet finds a loving home🐕</i></h3>
 </div>
 
 ---
