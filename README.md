@@ -156,11 +156,11 @@ Pawgram-The-Virtual-Pet-Simulator-main.zip
 🌐Pawgram The Virtual Pet Simulator\Pawgram\src> java Main.java
 ```
 ---
-<div align="center">
-<h2>
-Sample Outputs
-</h2>
+<div align = "center">
+<h3> Sample Outputs <br>
+ˋˏ✄┈┈┈┈</h3>
 </div>
+
 
 ### Game Start
 
