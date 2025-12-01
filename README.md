@@ -87,62 +87,81 @@
 │       └── 📂utils                    
 │           └── ♨️PetUtils.java
 │           └── ♨️UIUtils.java
-└── README.md
+└── ♨️README.md
 ```
-
 ---
 
+<div align="center">
+<h3> ── .✦ Folder Structure ✦. ── </h3>
+</div>
+
+- 📂 `Pawgram/` - Game folder of the project
+  - 📂 `src/` - Contains all the source file of the project
+    - 📂 `paw/` - Contains the source file for each functionalities of the project
+      - 📂 `managers` - Contains the source code for `GameManager`, `PetManager`, and `ShopManager` 
+      - 📂 `models` - Contains the source code for the player and pets (`Dog`, `Cat` etc.)
+      - 📂 `services` - Contains the source code that allows for `saving` and `loading` features
+      - 📂 `utils` - Contain the source code for `utilities` and `input validation` found in the project 
+- ♨️ `README.md` - Includes the `overview`, `documentation`, and `instruction` for the project
+---
 <div align = "center">
 <h3>  How to Run the Program  <br>
     ◁ |⚙⌨⚙| ▷ </h3>
 </div>
+
+---
+
+<h2>Compilation and Running of the Program</h2>
 <p>
-Download Pawgram The Virtual Pet Simulator in github as a .zip file.
+1. Download Pawgram The Virtual Pet Simulator in github as a .zip file.
 </p>
 
 ```
 Pawgram-The-Virtual-Pet-Simulator-main.zip
 ```
 <p>
-Extract the .zip file and it should look something like this:
+2. Extract the .zip file and it should look something like this:
 </p>
 
 ```
 📂Pawgram-The-Virtual-Pet-Simulator-main
 ```
 <p>
-Navigate through the src folder
+3. Navigate through the src folder
 </p>
 
 ```
 📂Pawgram\📂src
 ```
 <p> 
-Right click on the src/ folder and open in Terminal:
+4. Right click on the src/ folder and open in Terminal:
 </p>
 
 ```
-Downloads\Pawgram-The-Virtual-Pet-Simulator-main\Pawgram The Virtual Pet Simulator\Pawgram\src>
+🌐Downloads\Pawgram-The-Virtual-Pet-Simulator-main\Pawgram The Virtual Pet Simulator\Pawgram\src>
 ```
 <p>
-Type in this command to compile:
+5. Type in this command to compile:
 </p>
 
 ```
-Pawgram The Virtual Pet Simulator\Pawgram\src> javac Main.java
+🌐Pawgram The Virtual Pet Simulator\Pawgram\src> javac Main.java
 ```
 
 <p>
-If there was no errors in the compiling of the program, run the program using:
+6. If there was no errors in the compiling of the program, run the program using:
 </p>
 
 ```
-Pawgram The Virtual Pet Simulator\Pawgram\src> java Main.java
+🌐Pawgram The Virtual Pet Simulator\Pawgram\src> java Main.java
 ```
-
-
 ---
-
+<div align="center">
+<h2>
+Sample Outputs
+</h2>
+</div>
+<h2>Game Start</h2>
 <div align="center">
   
 <h2> ≽^• ˕ • ྀི≼ PAWGRAMMERS ≽^• ˕ • ྀི≼</h2>
