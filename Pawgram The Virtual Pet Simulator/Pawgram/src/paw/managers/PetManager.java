@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class PetManager {
     private Scanner input = new Scanner(System.in);
 
-    public Pets createPet(int choice, String name) {
-        System.out.print("Name your pet: ");
+    public Pets createPet(int choice, String name) {//User
+        System.out.print("Name your pet: ");//Prompt to name the pet
         name = input.nextLine();
         name = PetUtils.capitalizeFirstLetter(name);
 
@@ -26,7 +26,7 @@ public class PetManager {
         };
     }
 
-    public Pets createPetWithGender(int choice, String name, String gender) {
+    public Pets createPetWithGender(int choice, String name, String gender) {//offspring
         return switch (choice) {
             case 1 -> new Dog(name, "Collar", gender, false);
             case 2 -> new Cat(name, "Bell", gender, false);
@@ -38,43 +38,44 @@ public class PetManager {
         };
     }
 
-    public void switchPet(paw.models.Player player) {
-        if (player.getOwnedPets().size() <= 1) {
+    public void switchPet(paw.models.Player player) { //Switch Pet
+        if (player.getOwnedPets().size() <= 1) { //Check how many pets you have
             System.out.println("You only have one pet.");
             return;
         }
         System.out.println("\n=== Choose Pet ===");
         for (int i = 0; i < player.getOwnedPets().size(); i++) {
-            System.out.println((i + 1) + ". " + player.getOwnedPets().get(i).getPetName());
+            System.out.println((i + 1) + ". " + player.getOwnedPets().get(i).getPetName()); //Enumerates pets you have
         }
 
         System.out.print("Select: ");
         int choice = UIUtils.getValidatedInt(input, 1, player.getOwnedPets().size());
 
         player.setActivePet(player.getOwnedPets().get(choice - 1));
-        System.out.println("Switched active pet to " + player.getActivePet().getPetName());
+        System.out.println("Switched active pet to " + player.getActivePet().getPetName()); //Active Pet Switched
 
         UIUtils.pause();
     }
 
     public void breedPets(Player player) {
-        if (player.getOwnedPets().size() < 2) {
+        if (player.getOwnedPets().size() < 2) { //Needs at least 2 pets to breed
             System.out.println("You need at least two pets to breed!");
             UIUtils.pause();
             return;
         }
 
-        System.out.println(UIUtils.createTitleBox("PET BREEDING"));
+        System.out.println(UIUtils.createTitleBox("PET BREEDING")); // Breeding 
         System.out.println("Select two pets to breed:\n");
 
         for (int i = 0; i < player.getOwnedPets().size(); i++) {
             Pets pet = player.getOwnedPets().get(i);
-            String status = pet.isReadyToBreed() ? "Ready" : "Not Ready";
-            String pregnant = pet.getIsPregnant() ? "Yes" : "No";
+            String status = pet.isReadyToBreed() ? "Ready" : "Not Ready"; //Checks if pet is ready to breed
+            String pregnant = pet.getIsPregnant() ? "Yes" : "No"; //Checks if pet is pregnant
+            
+            //Prints details
+            System.out.printf("%2d. %s %s (%s, %s)%s\n",i + 1, pet.getGender(), pet.getPetName(), pet.getPetSpecies(), status, pregnant);
 
-            System.out.printf("%2d. %s %s (%s, %s)%s\n",
-                i + 1, pet.getGender(), pet.getPetName(), pet.getPetSpecies(), status, pregnant);
-
+            //Breed Conditions
             if (!pet.isReadyToBreed()) {
                 if (pet.getLevel() < 3) System.out.println("     - Needs level 3+");
                 if (pet.getIsSick()) System.out.println("     - Is sick");
@@ -85,25 +86,26 @@ public class PetManager {
             }
         }
 
+        //Select First Parent
         System.out.print("\nSelect first parent: ");
-        int firstChoice = UIUtils.getValidatedInt(input, 1, player.getOwnedPets().size()) - 1;
+        int firstChoice = UIUtils.getValidatedInt(input, 1, player.getOwnedPets().size()) - 1; //Checks for invalid input
 
         System.out.println("\n=== Select Second Parent ===");
-        for (int i = 0; i < player.getOwnedPets().size(); i++) {
+        for (int i = 0; i < player.getOwnedPets().size(); i++) { //Enumerates available pets
             if (i == firstChoice) continue;
 
             Pets pet = player.getOwnedPets().get(i);
             String status = pet.isReadyToBreed() ? "Ready" : "Not Ready";
             String pregnant = pet.getIsPregnant() ? "Yes" : "No";
 
-            System.out.printf("%2d. %s %s (%s, %s)%s\n",
-                i + 1, pet.getGender(), pet.getPetName(), pet.getPetSpecies(), status, pregnant);
+            System.out.printf("%2d. %s %s (%s, %s)%s\n", i + 1, pet.getGender(), pet.getPetName(), pet.getPetSpecies(), status, pregnant);
         }
 
+        //Select Second Parent
         System.out.print("Select second parent: ");
-        int secondChoice = UIUtils.getValidatedInt(input, 1, player.getOwnedPets().size()) - 1;
+        int secondChoice = UIUtils.getValidatedInt(input, 1, player.getOwnedPets().size()) - 1; //Checks for invalid input
 
-        if (secondChoice == firstChoice) {
+        if (secondChoice == firstChoice) { //Checks if same pet
             System.out.println("Cannot select the same pet twice!");
             return;
         }
@@ -111,7 +113,8 @@ public class PetManager {
         Pets parent1 = player.getOwnedPets().get(firstChoice);
         Pets parent2 = player.getOwnedPets().get(secondChoice);
 
-        if (!checkBreedingCompatibility(parent1, parent2)) {
+        //Checks Compatibility
+        if (!checkBreedingCompatibility(parent1, parent2)) { 
             return;
         }
 
@@ -121,18 +124,18 @@ public class PetManager {
         System.out.println("\n" + UIUtils.createTitleBox("BREEDING COMPATIBILITY"));
         System.out.println("Compatibility Score: " + compatibility + "/100 - " + compatibilityDesc);
         System.out.println("Factors:");
-        System.out.println("- Same Species: " + (parent1.getPetSpecies().equals(parent2.getPetSpecies()) ? "Yes +40" : "No +0"));
-        System.out.println("- Same Breed Group: " + (parent1.getBreedGroup().equals(parent2.getBreedGroup()) ? "Yes +20" : "No +0"));
-        System.out.println("- Compatible Natures: " + (parent1.areNaturesCompatible(parent1.getNature(), parent2.getNature()) ? "Yes +10" : "No +0"));
-        System.out.println("- Same Environment: " + (parent1.getPreferredEnvironment().equals(parent2.getPreferredEnvironment()) ? "Yes +15" : "No +0"));
-        System.out.println("- Level Similarity: " + getLevelCompatibilityBonus(parent1, parent2));
-        System.out.println("- Mood Bonus: " + (parent1.getMoodLevel() > 80 && parent2.getMoodLevel() > 80 ? "Yes +15" : "No +0"));
+        System.out.println("- Same Species: " + (parent1.getPetSpecies().equals(parent2.getPetSpecies()) ? "Yes +40" : "No +0")); //Checks if equal
+        System.out.println("- Same Breed Group: " + (parent1.getBreedGroup().equals(parent2.getBreedGroup()) ? "Yes +20" : "No +0")); //Checks if equal
+        System.out.println("- Compatible Natures: " + (parent1.areNaturesCompatible(parent1.getNature(), parent2.getNature()) ? "Yes +10" : "No +0")); //Checks if equal
+        System.out.println("- Same Environment: " + (parent1.getPreferredEnvironment().equals(parent2.getPreferredEnvironment()) ? "Yes +15" : "No +0")); //Checks if equal
+        System.out.println("- Level Similarity: " + getLevelCompatibilityBonus(parent1, parent2)); //Checks level difference
+        System.out.println("- Mood Bonus: " + (parent1.getMoodLevel() > 80 && parent2.getMoodLevel() > 80 ? "Yes +15" : "No +0")); //Mood Bonus
 
         double successChance = compatibility / 100.0;
         System.out.println("\nSuccess Chance: " + (int)(successChance * 100) + "%");
 
         if (Math.random() > successChance) {
-            System.out.println("\nBreeding attempt failed! The pets weren't compatible enough.");
+            System.out.println("\nBreeding attempt failed! The pets weren't compatible enough."); //Breeding Failed
             parent1.petEnergy(-10);
             parent2.petEnergy(-10);
             parent1.petMood(-5);
@@ -141,6 +144,7 @@ public class PetManager {
             return;
         }
 
+        //Only Female Pets would get pregnant
         Pets mother = parent1.getGender().equals("Female") ? parent1 : parent2;
 
         if (mother.getGender().equals("Female")) {
@@ -165,6 +169,7 @@ public class PetManager {
         UIUtils.pause();
     }
 
+    //Checks for level compatibility
     private String getLevelCompatibilityBonus(Pets pet1, Pets pet2) {
         int levelDiff = Math.abs(pet1.getLevel() - pet2.getLevel());
         if (levelDiff <= 2) return "Yes +10";
@@ -172,6 +177,7 @@ public class PetManager {
         return "No + 0";
     }
 
+    //Breeding compatibility
     private boolean checkBreedingCompatibility(Pets parent1, Pets parent2) {
 
         if (!parent1.isReadyToBreed()) {
@@ -201,6 +207,7 @@ public class PetManager {
         return true;
     }
 
+    //Breeding Reqs
     private void showBreedingRequirements(Pets pet) {
         System.out.println("Breeding Requirements for " + pet.getPetName() + ":");
         if (pet.getLevel() < 3) System.out.println("  - Level 3+ (Current: " + pet.getLevel() + ")");
@@ -211,27 +218,29 @@ public class PetManager {
         if (pet.getIsPregnant()) System.out.println("  - Not already pregnant");
     }
 
+    //Offspring
     public void manageOffspring(Player player) {
-        if (player.getOffsprings().isEmpty()) {
+        if (player.getOffsprings().isEmpty()) { //Checks if there are offsprings
             System.out.println("You have no offspring to manage.");
             UIUtils.pause();
             return;
         }
 
         System.out.println("\n=== Manage Offspring ===");
-        for (int i = 0; i < player.getOffsprings().size(); i++) {
+        for (int i = 0; i < player.getOffsprings().size(); i++) { //Enumerates Offsprings
             Offspring offspring = player.getOffsprings().get(i);
             System.out.println((i + 1) + ". " + offspring.getName() + 
                 " (" + offspring.getSpecies() + ", " + offspring.getGender() + 
                 ", " + offspring.getGrowthStageName() + ")");
         }
 
+        //Actions for offsprings
         System.out.println("1. Care for Offspring (Progress Growth)");
         System.out.println("2. Promote to Full Pet (if adult)");
         System.out.println("0. Back");
         System.out.print("Select: ");
 
-        int choice = UIUtils.getValidatedInt(input, 0, 2);
+        int choice = UIUtils.getValidatedInt(input, 0, 2); //Validates choice to 0 - 2
 
         switch (choice) {
             case 1:

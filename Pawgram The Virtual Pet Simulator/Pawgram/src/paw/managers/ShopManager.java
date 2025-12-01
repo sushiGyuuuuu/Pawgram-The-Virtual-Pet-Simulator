@@ -56,23 +56,23 @@ public class ShopManager {
             System.out.println(UIUtils.menuOption(0, "Exit Shop"));
             System.out.print("\nChoose: ");
 
-            choice = UIUtils.getValidatedInt(input, 0, 3);
+            choice = UIUtils.getValidatedInt(input, 0, 3); //Validates choice to 0-3
 
             switch (choice) {
                 case 1: 
-                    buyFood(player); 
+                    buyFood(player); //buy food
                     input.nextLine();
                     break;
                 case 2: 
-                    buyAccessory(player); 
+                    buyAccessory(player); //buy accessory
                     input.nextLine();
                     break;
                 case 3: 
-                    adoptPet(player); 
+                    adoptPet(player); //adopt new pet
                     input.nextLine();
                     break;
                 case 0: 
-                    System.out.println("Leaving shop...");
+                    System.out.println("Leaving shop..."); // leave shop
                     UIUtils.pause();
                     break;
                 default: 
@@ -82,6 +82,7 @@ public class ShopManager {
         } while (choice != 0);
     }
 
+    //counts food in inventory
     private int countPlayerFood(Player player) {
         int count = 0;
         for (Item item : player.getInventory()) {
@@ -92,10 +93,11 @@ public class ShopManager {
         return count;
     }
 
+    //buy food
     private void buyFood(Player player) {
         UIUtils.clearScreen();
         System.out.println(UIUtils.createTitleBox("FOOD SHOP"));
-        System.out.println("Your coins: " + player.getCoins());
+        System.out.println("Your coins: " + player.getCoins()); //display coins
         System.out.println();
         
         System.out.println("Available Food Items:");
@@ -113,7 +115,7 @@ public class ShopManager {
         System.out.println("\n0. Cancel");
         System.out.print("Choose: ");
 
-        int choice = UIUtils.getValidatedInt(input, 0, 7);
+        int choice = UIUtils.getValidatedInt(input, 0, 7); //validates input to 0-7
 
         int price = 0;
         FoodItem food = null;
@@ -156,7 +158,7 @@ public class ShopManager {
         }
 
         if (player.getCoins() < price) {
-            System.out.println("Not enough coins!");
+            System.out.println("Not enough coins!"); //insufficient coins
             return;
         }
 
@@ -169,10 +171,11 @@ public class ShopManager {
         UIUtils.pause();
     }
 
+    // buy accessory
     private void buyAccessory(Player player) {
         UIUtils.clearScreen();
         System.out.println(UIUtils.createTitleBox("ACCESSORY SHOP"));
-        System.out.println("Your coins: " + player.getCoins());
+        System.out.println("Your coins: " + player.getCoins()); //display coins
         System.out.println();
         
         System.out.println("Available Accessories:");
@@ -188,7 +191,7 @@ public class ShopManager {
         System.out.println("\n0. Cancel");
         System.out.print("Choose: ");
 
-        int choice = UIUtils.getValidatedInt(input, 0, 5);
+        int choice = UIUtils.getValidatedInt(input, 0, 5); //validates input 0-5
 
         int price = 0;
         AccessoryItem item = null;
@@ -239,11 +242,12 @@ public class ShopManager {
         UIUtils.pause();
     }
 
+    //Adopt pet
     private void adoptPet(Player player) {
         UIUtils.clearScreen();
         System.out.println(UIUtils.createTitleBox("PET ADOPTION CENTER"));
-        System.out.println("Your coins: " + player.getCoins());
-        System.out.println("Current pets: " + player.getOwnedPets().size());
+        System.out.println("Your coins: " + player.getCoins()); //coin amount
+        System.out.println("Current pets: " + player.getOwnedPets().size()); //Pet size
         System.out.println();
         
         System.out.println("Adoption Fee: 50 coins per pet");
@@ -261,16 +265,10 @@ public class ShopManager {
         System.out.println("\n0. Cancel");
         System.out.print("Choose pet to adopt: ");
 
-        int choice = UIUtils.getValidatedInt(input, 0, 6);
+        int choice = UIUtils.getValidatedInt(input, 0, 6); //validate input 0-6
 
-        if (choice == 0) {
+        if (choice == 0) { //cancel
             System.out.println("Adoption cancelled.");
-            UIUtils.pause();
-            return;
-        }
-
-        if (choice < 1 || choice > 6) {
-            System.out.println("Invalid choice. Please select 1-6.");
             UIUtils.pause();
             return;
         }

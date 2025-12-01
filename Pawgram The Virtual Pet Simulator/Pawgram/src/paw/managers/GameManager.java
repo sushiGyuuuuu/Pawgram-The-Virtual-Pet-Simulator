@@ -30,9 +30,9 @@ public class GameManager {
         int sel = UIUtils.getValidatedInt(input, 1, 2);
         
         if (sel == 2) {
-            if (!loadGame()) {
+            if (!loadGame()) { // If no save file
                 input.nextLine();
-                newPlayerFlow();
+                newPlayerFlow(); // Proceed to character creation
             }
         } else {
             newPlayerFlow();
@@ -40,7 +40,7 @@ public class GameManager {
         
         mainLoop();
     }
-
+    //Display Welcome Screen
     private void displayWelcomeScreen() {
         System.out.println(
             "██████╗  █████╗ ██╗    ██╗ ██████╗ ██████╗  █████╗ ███╗   ███╗\n" +
@@ -61,7 +61,7 @@ public class GameManager {
         UIUtils.showLoading("Loading your adventure");
         
         Player loaded = SaveSystem.load();
-        if (loaded != null) {
+        if (loaded != null) { // Will load the game file if there is a save file
             this.player = loaded;
             System.out.println("\n" + UIUtils.createTitleBox("WELCOME BACK!"));
             System.out.println("Hello, " + PetUtils.capitalizeFirstLetter(player.getPlayerName()) + "!");
@@ -78,7 +78,7 @@ public class GameManager {
         UIUtils.clearScreen();
         System.out.println(UIUtils.createTitleBox("NEW ADVENTURE"));
         
-        System.out.print("Enter your name: ");
+        System.out.print("Enter your name: "); //Prompts to input name
         String name = input.nextLine();
         player = new Player(name);
         
@@ -98,7 +98,7 @@ public class GameManager {
         System.out.println("└──────────────────────────┘");
         System.out.print("\nSelect: ");
 
-        int choice = UIUtils.getValidatedInt(input,1, 6);
+        int choice = UIUtils.getValidatedInt(input,1, 6); //Validates choice from 1-6
         UIUtils.clearScreen();
 
         Pets p = petManager.createPet(choice, name);
@@ -131,62 +131,62 @@ public class GameManager {
             displayMainMenu();
             
             System.out.print("\nSelect: ");
-            choice = UIUtils.getValidatedInt(input, 0, 11);
+            choice = UIUtils.getValidatedInt(input, 0, 11);//Validated input from 1-11
 
             switch (choice) {
                 case 1:
                     UIUtils.clearScreen(); 
-                    feedPet();
+                    feedPet(); //Feed
                     input.nextLine();
                     break;
                 case 2:
                     UIUtils.clearScreen();
-                    playWithPet();
+                    playWithPet(); //Play
                     input.nextLine();
                     break;
                 case 3:
                     UIUtils.clearScreen();
-                    putPetToSleep();
+                    putPetToSleep(); //Sleep
                     input.nextLine();
                     break;
                 case 4:
                     UIUtils.clearScreen();
-                    showStats();
+                    showStats(); //Show stats
                     input.nextLine();
                     break;
                 case 5:
                     UIUtils.clearScreen();
-                    petManager.switchPet(player);
+                    petManager.switchPet(player); //Switch Pet
                     input.nextLine();
                     break;
                 case 6:
                     UIUtils.clearScreen();
-                    shop.openShop(player);
+                    shop.openShop(player); //Shop Menu
                     input.nextLine();
                     break;
                 case 7:
                     UIUtils.clearScreen();
-                    openInventory();
+                    openInventory(); //Inventory
                     input.nextLine();
                     break;
                 case 8:
                     UIUtils.clearScreen();
-                    petManager.breedPets(player);
+                    petManager.breedPets(player); //Breed
                     input.nextLine();
                     break;
                 case 9:
                     UIUtils.clearScreen();
-                    petManager.manageOffspring(player);
+                    petManager.manageOffspring(player); //Manage Offspring
                     input.nextLine();
                     break;
                 case 10:
                     UIUtils.clearScreen();
-                    saveGame();
+                    saveGame(); //Save game
                     input.nextLine();
                     break;
                 case 11:
                     UIUtils.clearScreen();
-                    loadGame();
+                    loadGame(); //Load game
                     input.nextLine();
                     break;
                 case 0:
@@ -208,18 +208,18 @@ public class GameManager {
         // Display active pet info
         if (activePet != null) {
             System.out.println(PetUtils.formatPetStatus(
-                activePet.getPetName(), 
-                activePet.getPetSpecies(), 
-                activePet.getMoodLevel(), 
-                activePet.getEnergy(), 
-                activePet.getLevel(), 
-                activePet.getIsSick(), 
-                activePet.getGender(), 
-                activePet.getIsPregnant()
+                activePet.getPetName(), //Displays pet name
+                activePet.getPetSpecies(), //Displays pet species
+                activePet.getMoodLevel(), //Displays pet mood level
+                activePet.getEnergy(), //Displays pet energy
+                activePet.getLevel(), //Displays pet level
+                activePet.getIsSick(), //Displays if pet is sick
+                activePet.getGender(), //Displays pet gender
+                activePet.getIsPregnant()//Displays if pet is pregnant
             ));
         }
 
-        if (activePet.getIsPregnant()) {
+        if (activePet.getIsPregnant()) { //If pet is pregnant
             System.out.println(UIUtils.createTitleBox("PREGNANCY UPDATE"));
             System.out.println(activePet.getPetName() + " is pregnant!");
             System.out.println("Pregnancy Progress: " + activePet.getPregnancyProgress() + "%");
@@ -231,14 +231,14 @@ public class GameManager {
             }
             System.out.println();
         }
-        // In displayMainMenu() after displaying pet info
+        // displays warning alert if there is no food in the inventory
         int foodCount = countFoodInInventory();
         if (foodCount == 0) {
             System.out.println("\nWARNING: You have no food in inventory!");
             System.out.println("Visit the shop (option 6) to buy food.");
         }
     
-    // PREGNANCY NOTIFICATION: Check for other pregnant pets
+    // Check for other pregnant pets
         int pregnantPetsCount = countPregnantPets();
         if (pregnantPetsCount > 0) {
             System.out.println(UIUtils.createTitleBox("PREGNANCY ALERT"));
@@ -384,7 +384,7 @@ public class GameManager {
         player.getActivePet().sleep();
         UIUtils.pause();
     }
-
+    //Displays Detailed Stats of the Pet
     private void showStats() {
         Pets pet = player.getActivePet();
         System.out.println(UIUtils.createTitleBox("DETAILED STATS"));
