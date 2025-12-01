@@ -249,7 +249,7 @@ Select:
   </tr>
 
   <tr>
-    <td><img src="IMAGE HERE" width="100" height="100"></td>
+    <td><img src="Images/Perez.png" width="100" height="100"></td>
     <td>
       <strong>Perez, Gabriel Theodore</strong><br/>
       <a href="github.com/sushiGyuuuuu" target="_blank">
