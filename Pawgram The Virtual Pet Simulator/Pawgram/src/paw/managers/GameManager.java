@@ -31,6 +31,7 @@ public class GameManager {
         
         if (sel == 2) {
             if (!loadGame()) { // If no save file
+                
                 newPlayerFlow(); // Proceed to character creation
             }
         } else {
@@ -119,7 +120,6 @@ public class GameManager {
             System.out.println("Take good care of your new friend! ");
         }
         UIUtils.pause();
-        input.nextLine();
     }
 
     private void mainLoop() {
@@ -135,57 +135,46 @@ public class GameManager {
                 case 1:
                     UIUtils.clearScreen(); 
                     feedPet(); //Feed
-                    input.nextLine();
                     break;
                 case 2:
                     UIUtils.clearScreen();
                     playWithPet(); //Play
-                    input.nextLine();
                     break;
                 case 3:
                     UIUtils.clearScreen();
                     putPetToSleep(); //Sleep
-                    input.nextLine();
                     break;
                 case 4:
                     UIUtils.clearScreen();
                     showStats(); //Show stats
-                    input.nextLine();
                     break;
                 case 5:
                     UIUtils.clearScreen();
                     petManager.switchPet(player); //Switch Pet
-                    input.nextLine();
                     break;
                 case 6:
                     UIUtils.clearScreen();
                     shop.openShop(player); //Shop Menu
-                    input.nextLine();
                     break;
                 case 7:
                     UIUtils.clearScreen();
                     openInventory(); //Inventory
-                    input.nextLine();
                     break;
                 case 8:
                     UIUtils.clearScreen();
                     petManager.breedPets(player); //Breed
-                    input.nextLine();
                     break;
                 case 9:
                     UIUtils.clearScreen();
                     petManager.manageOffspring(player); //Manage Offspring
-                    input.nextLine();
                     break;
                 case 10:
                     UIUtils.clearScreen();
                     saveGame(); //Save game
-                    input.nextLine();
                     break;
                 case 11:
                     UIUtils.clearScreen();
                     loadGame(); //Load game
-                    input.nextLine();
                     break;
                 case 0:
                     UIUtils.clearScreen();
@@ -452,6 +441,4 @@ public class GameManager {
         }
         UIUtils.pause();
     }
-
 }
-

@@ -51,7 +51,7 @@ public class Goldfish extends Fish{
 
     @Override
     public void sleep() {
-        if(getEnergy() < 95) {
+        if(getEnergy() < 100) {
             System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " rests near the bottom of the tank...");
             petEnergy(10);
             petExperience(5);

@@ -1,8 +1,8 @@
 package paw.managers;
 
+import java.util.*;
 import paw.models.*;
 import paw.utils.*;
-import java.util.*;
 
 public class ShopManager {
     private List<Item> items = new ArrayList<>();
@@ -61,15 +61,12 @@ public class ShopManager {
             switch (choice) {
                 case 1: 
                     buyFood(player); //buy food
-                    input.nextLine();
                     break;
                 case 2: 
                     buyAccessory(player); //buy accessory
-                    input.nextLine();
                     break;
                 case 3: 
                     adoptPet(player); //adopt new pet
-                    input.nextLine();
                     break;
                 case 0: 
                     System.out.println("Leaving shop..."); // leave shop

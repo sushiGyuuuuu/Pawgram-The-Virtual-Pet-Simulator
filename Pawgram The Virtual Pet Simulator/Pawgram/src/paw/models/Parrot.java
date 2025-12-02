@@ -60,7 +60,7 @@ public class Parrot extends Bird{
 
     @Override
     public void sleep() {
-        if(getEnergy() < 100) {
+        if(getEnergy() > 100) {
             System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " does not seem to be sleepy yet.");
         }else {
             System.out.println(PetUtils.capitalizeFirstLetter(getPetName()) + " tuck its head under a wing and sleeps.");
